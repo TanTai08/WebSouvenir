@@ -24,7 +24,7 @@ Entry server.js; DB src/database.js; auth src/security.js và src/routes/auth.js
 - [x]10 Node tests: API tổng thể; restart giữ mật khẩu/data; xung đột port; xác nhận giá; rollback đa dòng; limiter riêng account; đổi password đồng thời; đối chiếu ledger; ngày UTC+7; response không lộ hash/body quá lớn.
 - [x]8 Chromium cases: login sai; admin nhập/bán/hủy; staff; mobile390x844; đổi password; xác nhận giá đổi; reset giỏ sau session mất hiệu lực; escape HTML/script trong sản phẩm.
 - [x] Docker build và thay container cùng volume: login, sản phẩm, tồn và đơn còn đúng.
-- [x] Ma trận kết quả: docs/TEST_MATRIX.csv; log Node thực: docs/reviews/297b500/node-test.log.
+- [x] Ma trận kết quả: docs/TEST_MATRIX.csv; log Node thực: docs/reviews/297b500/node-test.txt.
 - [ ] Thành viên review kết quả, approve PR và merge theo DoD.
 
 Dữ liệu test được tạo riêng trong thư mục tạm/volume CI. Các mốc thời gian đặt trong fixture chỉ để kiểm tra ranh giới UTC+7, không phải lịch sử giao dịch hoặc tiến độ học kỳ thật.
