@@ -4,7 +4,7 @@
 
 ## 1. Thông tin chung
 
-Tên đề xuất: GiftShop — Website quản lý cửa hàng đồ lưu niệm. Mã đề xuất: VKU-GIFT (nhóm xác nhận). Repo đích: https://github.com/TanTai08/WebSouvenir. PM: @TanTai08. Tên nhóm, lớp, họ tên/MSSV, lịch và link Project: CHƯA CUNG CẤP. Phiên bản tài liệu 0.1 — Draft.
+Tên đề xuất: GiftShop — Website quản lý cửa hàng đồ lưu niệm. Mã đề xuất: VKU-GIFT (nhóm xác nhận). Repo đích: https://github.com/TanTai08/WebSouvenir. PM: @TanTai08. Tên nhóm, lớp, họ tên/MSSV, lịch nộp: CHƯA CUNG CẤP. Project: https://github.com/users/TanTai08/projects/1. Phiên bản tài liệu 0.2 — Draft.
 
 ## 2. Nguồn gốc đề tài
 
@@ -28,11 +28,11 @@ Ngoài phạm vi: shop thương mại điện tử cho khách tự mua, thanh to
 
 ## 6. Stakeholder và cách phối hợp
 
-PM @TanTai08: điều phối, quyền quan tâm cao. Bốn thành viên: chưa xác định. Giảng viên môn QLDA: TS. Nguyễn Thanh Tuấn, kiểm tra mốc học phần. Người nghiệm thu chuyên ngành/nhóm dùng thử: cần xác nhận; chưa có tên hay chữ ký. Dự kiến demo cuối Sprint; lịch do các bên thống nhất. Không dùng tên mẫu như người nghiệm thu thật.
+PM @TanTai08: điều phối, quyền quan tâm cao. Tech Lead @Txtien-225; Backend @LQT23072005; Frontend @ngonhat21; QA @Hoangtrong-S1. Họ tên/MSSV và tỷ lệ đóng góp chờ nhóm bổ sung. Giảng viên môn QLDA: TS. Nguyễn Thanh Tuấn, kiểm tra mốc học phần. Người nghiệm thu chuyên ngành/nhóm dùng thử: cần xác nhận; chưa có tên hay chữ ký. Dự kiến demo cuối Sprint; lịch do các bên thống nhất. Không dùng tên mẫu như người nghiệm thu thật.
 
 ## 7. Công cụ quản trị
 
-GitHub Repository, Issues, Pull Requests, Projects và Actions. Status: Backlog → Ready → In Progress → In Review → Done. Issue có WBS ID, AC, assignee, estimate, Sprint, Milestone. Branch protection, review và CI cần được thiết lập/kiểm chứng trên repo; hiện chưa hoàn thành. Commit Conventional Commits, không chỉnh ngày để làm giả tiến trình.
+GitHub Repository, Issues, Pull Requests, Projects và Actions. Status: Backlog → Ready → In Progress → In Review → Done. Issue có WBS ID, AC, assignee, estimate, Sprint, Milestone. Repo báo main đã protected, CI đã pass và Project đã công khai; chi tiết required checks và peer review vẫn cần xác nhận. Commit Conventional Commits, không chỉnh ngày để làm giả tiến trình.
 
 ## 8. Mốc thời gian
 
@@ -45,10 +45,10 @@ Agile/Scrum, dự kiến Sprint 2 tuần. PM kiêm Scrum Master; cần chỉ đ�
 ## 10. Thành viên và trách nhiệm
 
 1. @TanTai08 — PM/Scrum Master; họ tên/MSSV chờ bổ sung; tỷ lệ chưa xác định.
-2. Tech Lead — chờ họ tên, MSSV, GitHub; kiến trúc, DB, CI, triển khai, review.
-3. Backend — chờ thông tin; API và nghiệp vụ.
-4. Frontend — chờ thông tin; giao diện và tích hợp.
-5. QA — chờ thông tin; test, UAT, evidence.
+2. @Txtien-225 — Tech Lead; họ tên/MSSV chờ bổ sung; kiến trúc, DB, CI, triển khai, review.
+3. @LQT23072005 — Backend; họ tên/MSSV chờ bổ sung; API và nghiệp vụ.
+4. @ngonhat21 — Frontend; họ tên/MSSV chờ bổ sung; giao diện và tích hợp.
+5. @Hoangtrong-S1 — QA; họ tên/MSSV chờ bổ sung; test, UAT, evidence.
 Tỷ lệ dự kiến cần cả nhóm thỏa thuận; cuối kỳ điều chỉnh theo đóng góp thật, tổng 100%.
 
 ## 11. Ràng buộc, giả định và rủi ro
