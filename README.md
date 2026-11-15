@@ -111,3 +111,13 @@ Xuất lại báo cáo (tùy chọn cho người chỉnh tài liệu): cài Pyth
 
 ## Kiểm chứng kỹ thuật có bản ghi
 Chạy `npm.cmd run qa:verify` để kiểm tra syntax/lint/format/test và lưu manifest, log tại data/qa-runs. Manifest ghi source commit và thời điểm thực; không thay peer approval/UAT. Sau khi đọc gói review trong docs/reviews, chủ Project có thể chạy `npm.cmd run qa:progress -- --apply` để ghi trạng thái #4 In Review, #10 In Progress, #17 In Review. Công cụ không đóng Issue hay gán đóng góp cho sinh viên.
+
+## Bàn giao, kiểm tra merge và demo HTTPS miễn phí
+
+Đọc [trình tự bàn giao](docs/DELIVERY_READINESS.md), [hướng dẫn người dùng](docs/USER_GUIDE.md) và [đối chiếu 5 nhóm hồ sơ](docs/SUBMISSION_CHECKLIST.md). Bộ [15 kịch bản UAT](docs/UAT_PLAN.csv) cùng [biên bản nghiệm thu](docs/UAT_SIGNOFF_DRAFT.md) đã được chuẩn bị, kết quả thực tế còn để trống.
+
+`npm.cmd run delivery:check` kiểm tra PR chỉ đọc; `npm.cmd run delivery:merge` chỉ merge khi có approval độc lập đúng commit, đủ CI và không xung đột. Không tự tạo review hoặc dùng quyền admin vượt rules.
+
+[GitHub Codespaces](docs/FREE_HTTPS_DEMO.md) là phương án demo HTTPS trong hạn mức miễn phí: cấu hình Node24 đã có, chạy `npm run codespace`, dùng mật khẩu riêng từ Codespaces secret. Cần chủ tài khoản tạo Codespace và kiểm link thật; website dừng khi Codespace dừng. SQLite được giữ trong workspace, cần tải backup trước khi xóa. Chưa có URL triển khai được xác nhận.
+
+Khi dùng reverse proxy đổi Host, đặt APP_ORIGIN là origin HTTPS thực tế (không có dấu / cuối); ứng dụng chỉ chấp nhận Origin đã cấu hình và không tin header forwarding do client gửi.

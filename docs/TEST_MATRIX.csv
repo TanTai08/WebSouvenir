@@ -39,3 +39,7 @@ AC01,Sổ kho đa sản phẩm sau bán/hủy,stock bằng tổng movements; t�
 AC02,Doanh thu ranh giới UTC+7,16:59:59Z ngày trước;17:00:00Z ngày sau; hủy loại số liệu,PASS Node CI
 AC03,Dữ liệu user và giới hạn request,Không trả salt/hash; body quá lớn413 không ghi sản phẩm,PASS Node CI
 AC04,HTML trong tên/danh mục,"Hiển thị text, không tạo img/script hoặc chạy handler",PASS browser CI
+PROXY01,Reverse proxy đổi Host nhưng APP_ORIGIN đúng,Login200 và cookieSecure; Origin khác403 kể cả giảforwardedheaders,PASS Node local
+PROXY02,Local không cấu hình APP_ORIGIN,Origin local200; Origin khác403,PASS Node local
+PROXY03,APP_ORIGIN chứa path hoặccredentials hoặcHTTP khisecure,Chặn cấu hình sai,PASS Node local
+GATE01,Điều kiện merge với review/checkfixtures,Từ chối self/stale/changesrequested/CI thiếu hoặc lỗi; chỉ nhận review đúngHEAD,PASS Node local (6 test); không tạo review thật
