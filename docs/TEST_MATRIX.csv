@@ -27,3 +27,11 @@ TC25,Logout,Token cũ trả401,PASS API
 UI01,"Desktop/mobile, bàn phím, lỗi mạng",Kiểm tra luồng và layout,PASS CI Chromium phần mobile/luồng chính; keyboard và mất mạng chưa kiểm toàn diện
 UAT01,Người nghiệm thu dùng luồng chính,Biên bản/email thật,CHƯA CHẠY
 DEP01,HTTPS/restart/restore production,Dữ liệu tồn tại và phục hồi được,CHƯA CHẠY
+REG01,"Giá giỏ cũ25000, giá DB99000","409 PRICE_CHANGED, không tạo đơn; xác nhận mới mới bán",PASS API + browser CI
+REG02,Dòng2 thay giá trong đơn nhiều dòng,Không thay tồn hoặc tạo đơn cho bất kỳ dòng,PASS API
+REG03,Đổi mật khẩu admin rồi restart demo,Khởi động được; mật khẩu mới và dữ liệu còn,PASS demo regression
+REG04,"Một account bị khóa, account khác cùng IP",Account khác login200; account bị khóa429,PASS API
+REG05,Đổi password đồng thời,Chỉ1 yêu cầu thành công; password thua không dùng được,PASS API
+REG06,Phiên mất hiệu lực trong cùng trang,Giỏ bị xóa trước lần đăng nhập sau,PASS browser CI
+REG07,Port đã bị tiến trình khác giữ,Demo không báo ready và exit code1,PASS startup test
+BUILD01,"Build Docker, xóa container và tạo lại cùng volume",Sản phẩm/tồn/đơn còn nguyên,PASS container CI
