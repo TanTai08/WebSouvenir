@@ -35,7 +35,7 @@ Schema thực: src/database.js. products.sku UNIQUE, price và stock không âm.
 HTTP: 400 đầu vào sai/nghiệp vụ không hợp lệ; 401 chưa đăng nhập; 403 sai quyền/Origin; 404 không thấy; 409 mã trùng/idempotency conflict; 413 body quá lớn; 429 giới hạn đăng nhập; 500 lỗi hệ thống. Error response là {error:string}.
 
 ## Giới hạn bản nhỏ
-Không phân trang lịch sử quá 200 bản ghi trên UI; không lợi nhuận/giá vốn; chưa có quên mật khẩu; rate-limit theo socket trong RAM; chưa thử tải production; browser QA và UAT còn chờ. Các giới hạn này phải được người nghiệm thu chấp nhận hoặc đưa vào backlog thay đổi.
+Không phân trang lịch sử quá 200 bản ghi trên UI; không lợi nhuận/giá vốn; chưa có quên mật khẩu; rate-limit theo tài khoản trong RAM; chưa thử tải production; browser QA tự động đã có, UAT người dùng còn chờ. Các giới hạn này phải được người nghiệm thu chấp nhận hoặc đưa vào backlog thay đổi.
 
 ## Xác nhận giá và phân tách module0.4
 Server kiểm expected_price trong cùng transaction trước khi ghi đơn. Giá không khớp trả409 PRICE_CHANGED, không ghi dữ liệu. UI làm mới giá và chờ xác nhận lại, không tự retry với giá mới. Các retry của đơn đã ghi vẫn trả đơn cũ theo key/payload.

@@ -188,3 +188,22 @@ test('Phiên hết hiệu lực phải xóa giỏ trước khi đăng nhập l�
   await section(page, 'sale');
   await expect(page.locator('#cart')).toContainText('Giỏ hàng đang trống');
 });
+
+test('Dữ liệu sản phẩm được hiển thị dạng văn bản, không chèn HTML/script', async ({ page }) => {
+  await login(page);
+  const sku = 'ESCAPE-' + Date.now();
+  const name = '<img src=x onerror="window.__qaXss=true">';
+  expect(
+    (
+      await page.request.post('/api/products', {
+        data: { sku, name, category: '<script>test</script>', price: 1000 },
+      })
+    ).status(),
+  ).toBe(201);
+  await section(page, 'products');
+  await page.locator('#search').fill(sku);
+  const row = page.locator('#productTable tbody tr');
+  await expect(row).toContainText(name);
+  await expect(row.locator('img,script')).toHaveCount(0);
+  expect(await page.evaluate(() => window.__qaXss)).toBeUndefined();
+});
