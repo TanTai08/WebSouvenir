@@ -35,3 +35,7 @@ REG05,Đổi password đồng thời,Chỉ1 yêu cầu thành công; password th
 REG06,Phiên mất hiệu lực trong cùng trang,Giỏ bị xóa trước lần đăng nhập sau,PASS browser CI
 REG07,Port đã bị tiến trình khác giữ,Demo không báo ready và exit code1,PASS startup test
 BUILD01,"Build Docker, xóa container và tạo lại cùng volume",Sản phẩm/tồn/đơn còn nguyên,PASS container CI
+AC01,Sổ kho đa sản phẩm sau bán/hủy,stock bằng tổng movements; tổng đơn bằng tổng chi tiết,PASS Node CI
+AC02,Doanh thu ranh giới UTC+7,16:59:59Z ngày trước;17:00:00Z ngày sau; hủy loại số liệu,PASS Node CI
+AC03,Dữ liệu user và giới hạn request,Không trả salt/hash; body quá lớn413 không ghi sản phẩm,PASS Node CI
+AC04,HTML trong tên/danh mục,"Hiển thị text, không tạo img/script hoặc chạy handler",PASS browser CI
