@@ -28,4 +28,4 @@ Bằng chứng sau review: __________________
 
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
 
-Tài khoản được PM phân công Frontend. Lời mời collaborator cần chủ repo thực hiện trên Settings do integration hiện trả403 khi gửi lời mời. Việc phân công không thay lịch sử đóng góp.
+Đã xác minh @ngonhat21 có quyền write trên repo và đã gán Issue Frontend #8, #13, #15. Các Issue liên kết sẽ hiển thị Assignees trên GitHub Projects.
