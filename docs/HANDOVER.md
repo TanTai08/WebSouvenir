@@ -1,5 +1,5 @@
 # Bàn giao cho nhóm 5 người
-Thông tin tập trung: config/team.json. PM @TanTai08; Frontend @ngonhat21. Ba slot Tech Lead, Backend và QA còn trống. Khi nhận GitHub, dùng scripts/assign_member.py để cập nhật và gán Issue. Chạy --help để xem cú pháp; không cần sửa code ứng dụng khi đổi thành viên.
+Thông tin tập trung: config/team.json. PM @TanTai08; Technical Lead @Txtien-225; Frontend @ngonhat21. Hai slot Backend và QA còn trống. Khi nhận GitHub, dùng scripts/assign_member.py để cập nhật và gán Issue. Chạy --help để xem cú pháp; không cần sửa code ứng dụng khi đổi thành viên.
 Họ tên, MSSV, tỷ lệ đóng góp vẫn cần bổ sung cho form học phần. Tài khoản ứng dụng admin/staff độc lập với thành viên GitHub.
 
 ## Mỗi vai trò cần review gì
