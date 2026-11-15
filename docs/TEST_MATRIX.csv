@@ -1,0 +1,29 @@
+﻿ID,Case,Expected,Result
+TC01,Chưa login đọc sản phẩm,401,PASS API
+TC02,Sai mật khẩu,401,PASS API
+TC03,Staff sửa sản phẩm,403,PASS API
+TC04,Trùng SKU,409,PASS API
+TC05,Số lượng nhập âm,400,PASS API
+TC06,Bán vượt tồn,"400, tồn giữ nguyên",PASS API
+TC07,Trùng product_id trong giỏ,400,PASS API
+TC08,Hai yêu cầu cùng bán 4 khi còn5,"Một thành công, một400",PASS API
+TC09,Staff xem thống kê,403,PASS API
+TC10,Staff hủy đơn,403,PASS API
+TC11,Hủy đơn đã bán,"Hoàn kho, loại doanh thu",PASS API
+TC12,Hủy lần hai,"400, không hoàn lại lần2",PASS API
+TC13,Origin khác gọi ghi,403,PASS API
+TC14,Đầu vào sai kiểu,400,PASS API
+TC15,Retry cùng Idempotency-Key,"Cùng order_id, trừ một lần",PASS API
+TC16,Cùng key đổi giỏ,409,PASS API
+TC17,Xem chi tiết đơn,Tên/giá/qty đã lưu,PASS API
+TC18,Staff xem users,403,PASS API
+TC19,Đổi mật khẩu sai mật khẩu cũ,403,PASS API
+TC20,Đổi mật khẩu hợp lệ,"Phiên cũ vô hiệu, password mới dùng được",PASS API
+TC21,Online backup,"integrity_check ok, stock và requests đúng",PASS API
+TC22,Backup đè file có sẵn,Bị chặn,PASS API
+TC23,JSON null,400,PASS API
+TC24,Hủy hàng đã archive khi hết tồn,Hoàn kho và thấy lại trong sản phẩm,PASS API
+TC25,Logout,Token cũ trả401,PASS API
+UI01,"Desktop/mobile, bàn phím, lỗi mạng",Kiểm tra luồng và layout,CHƯA CHẠY
+UAT01,Người nghiệm thu dùng luồng chính,Biên bản/email thật,CHƯA CHẠY
+DEP01,HTTPS/restart/restore production,Dữ liệu tồn tại và phục hồi được,CHƯA CHẠY
