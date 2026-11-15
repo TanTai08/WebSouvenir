@@ -69,4 +69,4 @@ const server=http.createServer(async(req,res)=>{try{
  if(p==='/api/users'&&req.method==='GET'){admin();return json(res,200,db.prepare('SELECT id,username,role FROM users ORDER BY id').all());}
  return json(res,404,{error:'Không tìm thấy'});
 }catch(e){if(e.code?.startsWith('ERR_SQLITE')&&e.message.includes('UNIQUE'))return json(res,409,{error:'Mã hoặc tài khoản đã tồn tại'});if(!e.status)console.error(e);json(res,e.status||500,{error:e.status?e.message:'Lỗi hệ thống'});}});
-server.listen(Number(process.env.PORT||3000),'0.0.0.0',()=>console.log('GiftShop listening on port '+(process.env.PORT||3000)));
+server.listen(Number(process.env.PORT||3000),process.env.HOST||'0.0.0.0',()=>console.log('GiftShop listening on port '+(process.env.PORT||3000)));
