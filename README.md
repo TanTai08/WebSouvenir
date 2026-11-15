@@ -108,3 +108,6 @@ Xem docs/PROJECT_PLAN.md. Kết nối chat chỉ đọc Projects, chưa sửa đ
 Peer review/merge PR; xác nhận các required checks trên main; Họ tên/MSSV/tỷ lệ đóng góp; môn kế thừa, deadline, stakeholder; HTTPS production; Sprint/Retro/Risk/CR thật; UAT/sign-off; báo cáo cuối và release v1.0.0. Hồ sơ15 trang hiện là báo cáo kỹ thuật theo trạng thái đã xác minh, chưa phải xác nhận hoàn thành học kỳ.
 
 Xuất lại báo cáo (tùy chọn cho người chỉnh tài liệu): cài Python3, `pip install reportlab python-docx`, chạy `python scripts/build_report.py`. PDF dùng font Unicode có sẵn trên Windows/Linux/macOS hoặc đường dẫn REPORT_FONT. Bản DOCX trong reports có thể chỉnh trực tiếp bằng Word.
+
+## Kiểm chứng kỹ thuật có bản ghi
+Chạy `npm.cmd run qa:verify` để kiểm tra syntax/lint/format/test và lưu manifest, log tại data/qa-runs. Manifest ghi source commit và thời điểm thực; không thay peer approval/UAT. Sau khi đọc gói review trong docs/reviews, chủ Project có thể chạy `npm.cmd run qa:progress -- --apply` để ghi trạng thái #4 In Review, #10 In Progress, #17 In Review. Công cụ không đóng Issue hay gán đóng góp cho sinh viên.

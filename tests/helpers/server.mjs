@@ -63,5 +63,5 @@ export async function fixture() {
     }
     rmSync(dir, { recursive: true, force: true });
   }
-  return { request, login, close };
+  return { request, login, close, databasePath: path.join(dir, 'app.db'), url: base };
 }

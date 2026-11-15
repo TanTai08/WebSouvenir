@@ -17,7 +17,9 @@
     "project:snapshot": "node scripts/snapshot-project.mjs",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{js,mjs,css,html}\" \"*.json\" \"config/*.json\"",
-    "format:check": "prettier --check \"**/*.{js,mjs,css,html}\" \"*.json\" \"config/*.json\""
+    "format:check": "prettier --check \"**/*.{js,mjs,css,html}\" \"*.json\" \"config/*.json\"",
+    "qa:verify": "node scripts/technical-qa.mjs",
+    "qa:progress": "node scripts/record-qa-progress.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
