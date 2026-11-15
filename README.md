@@ -5,6 +5,14 @@ Repo đích: https://github.com/TanTai08/WebSouvenir — PM: @TanTai08.
 ## Trạng thái
 Bản phát triển 0.3.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
 
+## Lấy đúng bản mã nguồn
+Bản triển khai nằm trong PR #1, nhánh `feat/giftshop-initial` (main đang giữ bản khởi tạo để chờ peer review). Clone bằng:
+```sh
+git clone --branch feat/giftshop-initial https://github.com/TanTai08/WebSouvenir.git
+cd WebSouvenir
+```
+Hoặc tải ZIP bản chạy, giải nén và mở terminal tại thư mục có package.json.
+
 ## Chạy ngay bản demo
 Cài Node.js 24 rồi chạy:
 ```sh
@@ -34,7 +42,7 @@ Quản trị viên tạo nhân viên trong màn hình Tài khoản. Vai trò ứ
 npm run check
 npm test
 ```
-Test dùng database tạm riêng: đăng nhập, phân quyền, mã trùng, số lượng âm, bán vượt kho, hai yêu cầu bán đồng thời, hủy đơn và hoàn kho, CSRF, đăng xuất. Browser QA chưa thực hiện trong môi trường này.
+Test dùng database tạm riêng: đăng nhập, phân quyền, mã trùng, số lượng âm, bán vượt kho, hai yêu cầu bán đồng thời, hủy đơn và hoàn kho, CSRF, đăng xuất. Browser QA tự động đã qua 5/5 case Chromium trên CI: https://github.com/TanTai08/WebSouvenir/actions/runs/43695889081. UAT người dùng còn chờ.
 
 ## Công nghệ
 Node.js 24 + SQLite + HTML/CSS/JavaScript thuần. Lựa chọn này thay cho đề xuất React/Supabase ban đầu để có bản đầy đủ backend chạy ngay, không phụ thuộc tài khoản cloud hay dịch vụ ngoài. Nhóm cần xác nhận công nghệ này phù hợp môn chuyên ngành trước khi chốt Charter.
@@ -48,7 +56,7 @@ Có Dockerfile và render.yaml; cấu hình Render đề xuất dùng gói có p
 Nhánh `feat/<issue>-<ten>` → PR → kiểm thử → ít nhất 1 người khác review → CI xanh → merge. `main` cần bật branch protection trong GitHub. Không gán tác giả thay người khác. Thư mục docs gồm tài liệu DỰ THẢO và mẫu ghi nhận bằng chứng, không thay cho hoạt động thực tế.
 
 ## Điểm còn thiếu trước khi nộp
-Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ngành cho Pathway 1; hạn nộp; stakeholder và chính sách thực tế; GitHub Projects và lịch sử Sprint; deploy HTTPS; kiểm thử giao diện/UAT; chữ ký; CR/Retro thực; báo cáo cuối 15–25 trang và release 1.0.0.
+Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ngành cho Pathway 1; hạn nộp; stakeholder và chính sách thực tế; GitHub Projects và lịch sử Sprint; deploy HTTPS; UAT; chữ ký; CR/Retro thực; báo cáo cuối 15–25 trang và release 1.0.0.
 
 ## Tiến độ GitHub được xác minh
 - PR triển khai: https://github.com/TanTai08/WebSouvenir/pull/1 (chưa merge, chờ peer review).

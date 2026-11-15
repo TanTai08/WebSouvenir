@@ -24,6 +24,6 @@ TC22,Backup đè file có sẵn,Bị chặn,PASS API
 TC23,JSON null,400,PASS API
 TC24,Hủy hàng đã archive khi hết tồn,Hoàn kho và thấy lại trong sản phẩm,PASS API
 TC25,Logout,Token cũ trả401,PASS API
-UI01,"Desktop/mobile, bàn phím, lỗi mạng",Kiểm tra luồng và layout,CHƯA CHẠY
+UI01,"Desktop/mobile, bàn phím, lỗi mạng",Kiểm tra luồng và layout,PASS CI Chromium phần mobile/luồng chính; keyboard và mất mạng chưa kiểm toàn diện
 UAT01,Người nghiệm thu dùng luồng chính,Biên bản/email thật,CHƯA CHẠY
 DEP01,HTTPS/restart/restore production,Dữ liệu tồn tại và phục hồi được,CHƯA CHẠY
