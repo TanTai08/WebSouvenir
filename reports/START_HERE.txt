@@ -6,7 +6,9 @@ DB mới: admin / GiftShop-Demo-2026! (chỉ demo). DB cũ: giữ password đã 
 Cập nhật: dừng app, backup data, cập nhật source, giữ data/, chạy và Ctrl+F5 trong trình duyệt. Không cần xóa database.
 Đã sửa stale price, restart sau đổi password, khóa nhiều account cùng IP, reset giỏ khi session mất hiệu lực.
 Code đã tách module backend/frontend.
-CI: syntax/lint/format,7 Node tests,7 browser tests, Docker build + thay container giữ volume đều pass.
+CI: syntax/lint/format,10 Node tests,8 browser tests, Docker build + thay container giữ volume đều pass.
 QA Hoangtrong-S1; PM TanTai08, TL Txtien-225, Backend LQT23072005, Frontend ngonhat21.
 Báo cáo mới: 04_Technical_Report_CURRENT.pdf.
 Còn cần review của thành viên, UAT, HTTPS production, chữ ký và evidence học kỳ; chưa release1.0.0.
+
+Gói rà soát kỹ thuật: Technical_QA_Verification.pdf. Khi có GitHub CLI đã login, chạy npm.cmd run qa:progress -- --apply để ghi tiến độ #4/#10/#17; không đóng Issue.
