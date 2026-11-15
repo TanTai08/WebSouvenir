@@ -1,0 +1,10 @@
+GiftShop / WebSouvenir — BẢN KHỞI TẠO, KHÔNG PHẢI HỒ SƠ ĐÃ HOÀN TẤT
+
+1. Giải nén GiftShop_Source.zip, đọc README.md và chạy Node.js 24.
+2. Mở Charter/WBS bản DOCX để điền dữ liệu thật, xin phê duyệt.
+3. Workbook Risk có Initial + Week06/Week11 trống + Burndown template.
+4. Final Report là khung, chưa đạt 15–25 trang và chưa đủ bằng chứng.
+5. Slide 10 trang là bản nháp; thay bằng số liệu thật khi bảo vệ.
+6. Không có chữ ký, nghiệm thu, lịch sử Sprint hoặc commit được dựng giả.
+7. Chưa triển khai HTTPS; cấu hình hosting có volume có thể phát sinh phí, chưa được đăng ký.
+8. Chưa push GitHub: phiên kết nối ngonhat21 hiện chỉ READ tại TanTai08/WebSouvenir.
