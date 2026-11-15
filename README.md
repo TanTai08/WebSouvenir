@@ -3,7 +3,7 @@ Website quản lý cửa hàng đồ lưu niệm cho đồ án QLDA VKU.
 Repo đích: https://github.com/TanTai08/WebSouvenir — PM: @TanTai08.
 
 ## Trạng thái
-Bản phát triển 0.1.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, chưa chạy CI trên GitHub, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
+Bản phát triển 0.1.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
 
 ## Chạy tại máy
 Yêu cầu Node.js 24 trở lên. Không cần npm install vì dùng thư viện có sẵn của Node.
@@ -39,4 +39,15 @@ Có Dockerfile và render.yaml; cấu hình Render đề xuất dùng gói có p
 Nhánh `feat/<issue>-<ten>` → PR → kiểm thử → ít nhất 1 người khác review → CI xanh → merge. `main` cần bật branch protection trong GitHub. Không gán tác giả thay người khác. Thư mục docs gồm tài liệu DỰ THẢO và mẫu ghi nhận bằng chứng, không thay cho hoạt động thực tế.
 
 ## Điểm còn thiếu trước khi nộp
-Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ngành cho Pathway 1; hạn nộp; stakeholder và chính sách thực tế; repo write access; GitHub Projects và lịch sử Sprint; deploy HTTPS; kiểm thử giao diện/UAT; chữ ký; CR/Retro thực; báo cáo cuối 15–25 trang và release 1.0.0.
+Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ngành cho Pathway 1; hạn nộp; stakeholder và chính sách thực tế; GitHub Projects và lịch sử Sprint; deploy HTTPS; kiểm thử giao diện/UAT; chữ ký; CR/Retro thực; báo cáo cuối 15–25 trang và release 1.0.0.
+
+## Tiến độ GitHub được xác minh
+- PR triển khai: https://github.com/TanTai08/WebSouvenir/pull/1 (chưa merge, chờ peer review).
+- CI đã pass: https://github.com/TanTai08/WebSouvenir/actions/runs/43693752840
+- Hồ sơ tải/xem tại thư mục reports trên nhánh feat/giftshop-initial.
+- Phiên GitHub đã được cấp quyền ADMIN trên repo sau lần kiểm tra READ ban đầu.
+- Tạo Projects qua API thất bại vì quyền integration; chủ repo tạo Project trên giao diện và liên kết repo.
+- Hồ sơ draft ghi trạng thái lúc khởi tạo; xem tiến độ mới trong README trước khi dùng.
+
+- Đã tạo 20 Issue và 5 Milestone; không đóng Issue khi chưa được nhóm review.
+- API branch protection trả 403: chủ repo cần bật PR + 1 approval + check verify trên main trong Settings.

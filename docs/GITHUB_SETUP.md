@@ -1,5 +1,5 @@
-# Thiết lập GitHub (chưa thực hiện trên repo)
-1. Chủ repo kiểm tra đúng tài khoản TanTai08. Mời 4 người còn lại sau khi xác nhận username. Phiên Codex hiện dùng ngonhat21, mới có quyền READ.
+# Thiết lập GitHub (đã có PR #1 và CI, Projects chưa tạo)
+1. Chủ repo kiểm tra đúng tài khoản TanTai08. Mời 4 người còn lại sau khi xác nhận username. Phiên Codex dùng ngonhat21 đã có quyền ADMIN trên repo; không có quyền tạo Project trong tài khoản TanTai08.
 2. Đưa source lên qua nhánh và PR khi repo đã có main. Nếu repo hoàn toàn trống, chủ repo khởi tạo README làm commit đầu trước, sau đó mở PR cho phần triển khai. Không thêm commit lùi ngày.
 3. Tạo Project dạng Board trong tài khoản TanTai08, liên kết WebSouvenir. Tạo Status: Backlog, Ready, In Progress, In Review, Done.
 4. Tạo trường Iteration/Sprint, Estimate (Number), WBS (Text). Khởi tạo Sprint 1 và Sprint 2 theo lịch học thực tế.
@@ -10,3 +10,6 @@
 9. Burndown: GitHub Projects có biểu đồ khác nhau tùy gói; nếu thiếu Burndown chuẩn, dùng sheet Burndown trong workbook được cung cấp và ghi rõ đây là biểu đồ lập từ snapshot board. Không dùng số liệu mô phỏng. Phạm vi đổi phải có CR và đường tổng scope cập nhật.
 10. Sau UAT mới tạo release v1.0.0 tại Releases → Draft a new release, chọn commit đã review và CI xanh. Hiện source là bản phát triển 0.1.0.
 11. Trước nộp: repo/project đủ quyền xem, website HTTPS; thử bằng cửa sổ ẩn danh. Không công khai dữ liệu khách hàng, mật khẩu hay database.
+
+## Trạng thái kết nối
+Đã có PR #1, CI pass, 20 Issue và 5 Milestone. API tạo Project (createProjectV2) và API branch protection đều báo thiếu quyền integration. Chủ repo cần tạo Project và bật bảo vệ main trên giao diện. Không có cấu hình bảo vệ main nào được xác minh thành công.
