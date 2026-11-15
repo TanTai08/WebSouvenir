@@ -15,7 +15,7 @@ styles['Normal'].fontSize=10;styles['Normal'].leading=16;styles['Title'].fontSiz
 pages=[]
 def page(title,paras,headers=None,rows=None):pages.append((title,paras,headers,rows))
 page('Chương 1 — Tổng quan dự án',[
-'GiftShop / WebSouvenir là website quản lý nội bộ cửa hàng bán đồ lưu niệm. Bản báo cáo này ghi nhận hiện trạng kỹ thuật của phiên bản 0.2.0; không khẳng định dự án đã hoàn tất học kỳ hoặc đã được nghiệm thu.',
+'GiftShop / WebSouvenir là website quản lý nội bộ cửa hàng bán đồ lưu niệm. Bản báo cáo này ghi nhận hiện trạng kỹ thuật của phiên bản 0.3.0; không khẳng định dự án đã hoàn tất học kỳ hoặc đã được nghiệm thu.',
 'Nhóm đã chọn Pathway 1 và định hướng Agile/Scrum. Các trường môn chuyên ngành kế thừa, hạn nộp, stakeholder, họ tên và MSSV được để trống theo yêu cầu của PM để hoàn thiện sau. Chưa có kết quả khảo sát cửa hàng; các khó khăn về quản lý thủ công mới là giả thuyết cần xác minh.',
 'Phần mềm đã có backend, cơ sở dữ liệu lưu trên máy chủ, xác thực và phân quyền. Sản phẩm không phải giao diện tĩnh. Tuy nhiên chưa có URL production HTTPS được xác nhận, vì vậy điều kiện sản phẩm triển khai công khai chưa hoàn thành.',
 'Các phần sau phân biệt rõ kết quả đã kiểm thử, cấu hình đã tạo và hoạt động cần con người thực hiện. Bằng chứng trực tuyến được lưu tại repo TanTai08/WebSouvenir, Pull Request #1 và GitHub Actions. Phiên bản đã được sinh với hỗ trợ Codex; không gán lịch sử commit cho các thành viên chưa tham gia.'
@@ -84,14 +84,14 @@ page('Chương 5 — Kiểm thử và CI',[
 'Kiểm thử tích hợp chạy server thật với database tạm độc lập và request HTTP. Các tài khoản và hàng tạo trong test được xóa cùng thư mục tạm sau khi chạy. Dữ liệu này chỉ là fixture kiểm thử, không dùng làm bằng chứng người dùng thật.',
 'Npm run check kiểm tra cú pháp server, frontend và script vận hành. Npm test kiểm tra luồng xác thực, quyền, nhập/bán/hủy, idempotency, đổi mật khẩu, backup và validation. Test ghi kết quả thật tại docs/verification.txt khi đóng gói.',
 'Workflow GitHub Actions chạy Node 24, check và test trên PR hoặc push main. Run của bản khởi tạo đã pass; PR cập nhật cần có run mới và peer approval trước khi merge. API cấu hình branch protection bị 403 nên chưa xác minh được enforcement trên main.',
-'Chưa thực hiện browser QA trong môi trường hiện tại. Các kiểm tra responsive, keyboard, dialog focus, lỗi mạng, tính dễ dùng và UAT đều phải do QA/nhóm chạy thực tế. Không dùng kết quả API để khẳng định giao diện đã được kiểm thử toàn diện.'
-],['Nhóm test','Kết quả / phạm vi'],[['Authentication / role','Test API đã qua'],['Inventory / cancellation','Test API đã qua'],['Idempotency / validation','Test API đã qua'],['Password / backup integrity','Test API đã qua'],['Browser / UAT / tải production','Chưa thực hiện']])
+'Đã chạy QA trình duyệt tự động trên GitHub Actions: 5/5 case Chromium pass, gồm login sai, admin bán/hủy, staff, viewport 390x844 và đổi mật khẩu. Run: https://github.com/TanTai08/WebSouvenir/actions/runs/43695889081. Kết quả này không thay UAT hoặc mọi kiểm tra khả dụng; cần đánh giá thêm bàn phím, mất mạng và người dùng thật.'
+],['Nhóm test','Kết quả / phạm vi'],[['Authentication / role','Test API đã qua'],['Inventory / cancellation','Test API đã qua'],['Idempotency / validation','Test API đã qua'],['Password / backup integrity','Test API đã qua'],['Browser Chromium','5/5 case pass trên CI'],['UAT / tải production','Chưa thực hiện']])
 page('Chương 6 — Rủi ro và thay đổi',[
 'Rủi ro được quản lý theo ba bước Identify, Analyze, Respond & Monitor; thang Probability/Impact 1–5 là đề xuất cần đối chiếu quy định môn. Initial register ghi các nguy cơ cụ thể, còn Week06 và Week11 được giữ trống đến khi có cập nhật thật.',
 'Biến cố quyền repo đã có diễn biến thực: kiểm tra ban đầu READ, sau đó được ADMIN và đã push nhánh/PR. Tuy nhiên quyền integration với Projects và branch protection vẫn bị giới hạn. Đây là sự kiện kỹ thuật có bằng chứng, chưa tự động thay thế CR thay đổi phạm vi do stakeholder phê duyệt.',
 'Rủi ro tạo trùng đơn khi retry đã được xử lý bằng idempotency và có test. Rủi ro mất dữ liệu trên disk tạm vẫn cần phương án hosting lưu bền; chưa có production. Thiếu người nghiệm thu và thiếu dữ liệu Sprint chưa thể đóng bằng việc sinh tài liệu.',
 'Mẫu CR có mô tả yêu cầu, lý do, phân tích phạm vi/thời gian/chi phí/rủi ro, phương án, CCB, quyết định và kiểm chứng sau thay đổi. Chưa có yêu cầu phạm vi thật được phê duyệt; không dựng nội dung để lấp biểu mẫu.'
-],['Rủi ro','Phản ứng / hiện trạng'],[['Quyền ghi repo','Đã được cấp; còn giới hạn Projects/protection'],['Đơn lặp khi retry','Đã bổ sung key và kiểm thử'],['Mất SQLite trên ổ tạm','Chưa deploy; cần volume hoặc đổi DB'],['Chưa có stakeholder','Để trống; PM bổ sung sau'],['Thiếu browser QA/UAT','Kịch bản đã chuẩn bị; chưa chạy']])
+],['Rủi ro','Phản ứng / hiện trạng'],[['Quyền ghi repo','Đã được cấp; còn giới hạn Projects/protection'],['Đơn lặp khi retry','Đã bổ sung key và kiểm thử'],['Mất SQLite trên ổ tạm','Chưa deploy; cần volume hoặc đổi DB'],['Chưa có stakeholder','Để trống; PM bổ sung sau'],['Thiếu UAT thật','Browser CI đã qua; UAT chưa tổ chức']])
 page('Chương 7 — Bàn giao, nghiệm thu và vận hành',[
 'Bộ bàn giao hiện có mã nguồn, README, hướng dẫn theo vai trò, test, Dockerfile, cấu hình Render, script backup/demo và hồ sơ PDF/DOCX/XLSX/PPTX. Các tài liệu nằm trong reports và docs trên nhánh feat/giftshop-initial; chưa gộp main vì cần review.',
 'Ứng dụng cần Node 24 và lưu trữ bền. ADMIN_PASSWORD dùng để khởi tạo lần đầu, không phải công cụ tự đổi mật khẩu khi database đã tồn tại. COOKIE_SECURE=1 được dùng sau HTTPS; DB_PATH phải trỏ vào volume. Cấu hình Render có thể có phí và chưa được đăng ký.',
@@ -99,8 +99,8 @@ page('Chương 7 — Bàn giao, nghiệm thu và vận hành',[
 'Bảo vệ có 6 phút trình bày, 5 phút demo và 5 phút Q&A theo tài liệu môn. Slide đã có bản 10 trang để cập nhật dữ liệu thật. Cần dữ liệu demo có nhãn, bản local/video dự phòng và diễn tập với đủ vai trò trước bảo vệ.'
 ],['Người bàn giao','Nội dung cần trình bày'],[['PM','Phạm vi, kế hoạch, thay đổi và bằng chứng'],['Tech Lead','Kiến trúc, CI, deploy, backup'],['Backend','Transaction, quyền, idempotency'],['Frontend','Luồng sử dụng và xử lý lỗi'],['QA','Test, defect, DoD và UAT']])
 page('Chương 7 — Kết luận hiện trạng và việc cần xác nhận',[
-'Bản 0.2.0 đã hoàn thiện thêm các phần kỹ thuật có thể kiểm tra độc lập và chuẩn bị đủ vị trí cho nhóm năm người. Việc thêm username được tách khỏi mã ứng dụng, giúp gán nhiệm vụ sau mà không viết lại phần mềm.',
-'Điều chưa hoàn thành là các điều kiện cần dữ liệu và hoạt động thực: danh tính bốn thành viên, thông tin học phần, người nghiệm thu, lịch sử hai Sprint, review của thành viên, browser QA, UAT, HTTPS và chữ ký. Theo yêu cầu PM, các trường này được để trống để cập nhật sau.',
+'Bản 0.3.0 đã hoàn thiện thêm các phần kỹ thuật có thể kiểm tra độc lập và chuẩn bị đủ vị trí cho nhóm năm người. Việc thêm username được tách khỏi mã ứng dụng, giúp gán nhiệm vụ sau mà không viết lại phần mềm.',
+'Điều chưa hoàn thành là các điều kiện cần dữ liệu và hoạt động thực: danh tính bốn thành viên, thông tin học phần, người nghiệm thu, lịch sử hai Sprint, review của thành viên, UAT, HTTPS và chữ ký. Theo yêu cầu PM, các trường này được để trống để cập nhật sau.',
 'Báo cáo hiện trạng không tuyên bố vượt Authenticity Gate. Bản nộp cuối kỳ cần thay các mục pending bằng kết quả có nguồn, được nhóm và stakeholder xác nhận. Không tạo release v1.0.0 trước nghiệm thu hoặc coi repo mới tạo là lịch sử cả học kỳ.',
 'Bài học kỹ thuật đã rút ra từ phiên phát triển: cần phân biệt quyền repo với quyền integration; xử lý retry ngoài việc disable nút; dùng backup hiểu WAL; phân biệt test tự động với kiểm thử chấp nhận người dùng. Bài học phối hợp nhóm chỉ được ghi sau khi nhóm thực hành thật.'
 ],['Checklist cuối kỳ','Trạng thái'],[['5 vị trí / thông tin cá nhân','Có vai trò; còn chờ dữ liệu'],['Mã nguồn / test / CI','Có bản triển khai và kiểm tra'],['Charter / WBS / Risk / slide','Có tài liệu; chưa duyệt'],['Sprint history / CR / UAT','Chưa có bằng chứng thật'],['HTTPS / release / sign-off','Chưa hoàn thành'],['Drive','Có thư mục đích đã được PM chấp thuận']])
@@ -118,7 +118,7 @@ for n,(title,paras,heads,rows) in enumerate(pages):
   for r in rows:
    for c,v in zip(dt.add_row().cells,r):c.text=str(v)
 def footer(c,d):
- c.setFont('VN',8);c.drawString(44,26,'GiftShop 0.2.0 · Hiện trạng kỹ thuật · Không thay thế nghiệm thu');c.drawRightString(550,26,str(d.page))
+ c.setFont('VN',8);c.drawString(44,26,'GiftShop 0.3.0 · Hiện trạng kỹ thuật · Không thay thế nghiệm thu');c.drawRightString(550,26,str(d.page))
 SimpleDocTemplate(str(out/'04_Technical_Report_CURRENT.pdf'),leftMargin=44,rightMargin=44,topMargin=38,bottomMargin=45).build(story,onFirstPage=footer,onLaterPages=footer)
 doc.save(out/'04_Technical_Report_CURRENT.docx')
 print('Created 04_Technical_Report_CURRENT.pdf + docx')
