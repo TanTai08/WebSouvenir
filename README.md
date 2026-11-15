@@ -78,3 +78,6 @@ Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ng�
 
 ## Kiểm thử trình duyệt
 Có bộ Playwright E2E trên GitHub Actions, gồm đăng nhập sai, luồng admin đầy đủ, staff, viewport mobile và đổi mật khẩu. Trên máy hỗ trợ browser: `npm ci`, `npx playwright install chromium`, `npm run test:browser`. Kết quả và ảnh chụp nằm trong artifact browser-qa của run. Đây là QA tự động, không phải UAT hoặc peer review của sinh viên.
+
+## Thiết lập Project trên tài khoản chủ repo
+Kế hoạch20 Issue đã chuẩn bị tại config/project-plan.json; QA để trống. Kết nối ChatGPT bị GitHub từ chối quyền sửa Project. Chạy `npm.cmd run project:plan` hoặc `npm.cmd run project:apply` trên máy đã đăng nhập GitHub CLI với scope project. Xem docs/PROJECT_PLAN.md.

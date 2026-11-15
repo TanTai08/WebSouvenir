@@ -1,0 +1,168 @@
+{
+  "owner": "TanTai08",
+  "repository": "TanTai08/WebSouvenir",
+  "number": 1,
+  "estimate_status": "Đề xuất, nhóm cần xác nhận; chưa Planning Poker",
+  "tasks": [
+    {
+      "id": "GS01",
+      "issue": 2,
+      "role": "PM",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS02",
+      "issue": 3,
+      "role": "PM",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS03",
+      "issue": 4,
+      "role": "Tech Lead",
+      "sprint": "Sprint 1",
+      "proposed_points": 5,
+      "status": "Ready"
+    },
+    {
+      "id": "GS04",
+      "issue": 5,
+      "role": "Tech Lead",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "Ready"
+    },
+    {
+      "id": "GS05",
+      "issue": 6,
+      "role": "Backend",
+      "sprint": "Sprint 1",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS06",
+      "issue": 7,
+      "role": "Backend",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "In Review"
+    },
+    {
+      "id": "GS07",
+      "issue": 8,
+      "role": "Frontend",
+      "sprint": "Sprint 1",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS08",
+      "issue": 9,
+      "role": "Backend",
+      "sprint": "Sprint 1",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS09",
+      "issue": 10,
+      "role": "QA",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS10",
+      "issue": 11,
+      "role": "PM",
+      "sprint": "Sprint 1",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS11",
+      "issue": 12,
+      "role": "Backend",
+      "sprint": "Sprint 2",
+      "proposed_points": 8,
+      "status": "In Review"
+    },
+    {
+      "id": "GS12",
+      "issue": 13,
+      "role": "Frontend",
+      "sprint": "Sprint 2",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS13",
+      "issue": 14,
+      "role": "Backend",
+      "sprint": "Sprint 2",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS14",
+      "issue": 15,
+      "role": "Frontend",
+      "sprint": "Sprint 2",
+      "proposed_points": 5,
+      "status": "In Review"
+    },
+    {
+      "id": "GS15",
+      "issue": 16,
+      "role": "PM",
+      "sprint": "Sprint 2",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS16",
+      "issue": 17,
+      "role": "QA",
+      "sprint": "Sprint 2",
+      "proposed_points": 5,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS17",
+      "issue": 18,
+      "role": "Tech Lead",
+      "sprint": "Sprint 3",
+      "proposed_points": 5,
+      "status": "Ready"
+    },
+    {
+      "id": "GS18",
+      "issue": 19,
+      "role": "QA",
+      "sprint": "Sprint 3",
+      "proposed_points": 3,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS19",
+      "issue": 20,
+      "role": "PM",
+      "sprint": "Sprint 3",
+      "proposed_points": 5,
+      "status": "Backlog"
+    },
+    {
+      "id": "GS20",
+      "issue": 21,
+      "role": "PM",
+      "sprint": "Sprint 3",
+      "proposed_points": 3,
+      "status": "Backlog"
+    }
+  ]
+}
