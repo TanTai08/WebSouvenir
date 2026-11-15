@@ -4,7 +4,7 @@ Họ tên, MSSV, tỷ lệ đóng góp vẫn cần bổ sung cho form học ph�
 
 ## Mỗi vai trò cần review gì
 - PM: docs/01_Project_Charter_DRAFT.md, WBS, backlog, lịch và scope; xác nhận môn Pathway 1, stakeholder; điều phối họp; cập nhật Project; phê duyệt thay đổi cùng PO/Tech Lead.
-- Tech Lead: server.js, schema và giao dịch; workflow CI; Docker/hosting; script backup; kiểm tra restore và quyền main. Có trách nhiệm giải thích kiến trúc trước hội đồng.
+- Tech Lead: src/database.js, src/security.js, src/routes/, schema và giao dịch; workflow CI; Docker/hosting; script backup; kiểm tra restore và quyền main. Có trách nhiệm giải thích kiến trúc trước hội đồng.
 - Backend: đọc từng API, chạy test, kiểm tra idempotency và rollback; bổ sung nghiệp vụ đã thống nhất; tự tạo PR cho phần chỉnh sửa thực tế.
 - Frontend: review public/, chạy với backend; kiểm tra desktop/mobile, keyboard, lỗi mạng, double-click, giỏ hàng; chụp bằng chứng UI thực.
 - QA: tests/, TEST_MATRIX.csv; chạy lại và ghi kết quả/bug; tổ chức UAT; kiểm tra DoD và evidence. Test tự động không thay UAT.
@@ -24,3 +24,6 @@ Có Dockerfile và render.yaml. Cần dịch vụ Node 24, HTTPS, volume lưu b�
 
 ## Kiểm tra trước nộp
 Đủ thông tin 5 người, môn kế thừa và stakeholder; Charter được ký; WBS được duyệt; Risk tuần6/11; Retro/CR thật; PR review và CI; lịch sử board và Burndown; UAT; HTTPS; release v1.0.0; hồ sơ 5 nhóm; quyền Drive view. Nếu thiếu hoạt động học kỳ, báo giảng viên để xử lý đúng, không tạo lịch sử lùi ngày.
+
+## Cập nhật0.4
+Đọc README và CHANGELOG cho các sửa giá/đổi mật khẩu/limiter. Backend đọc src/routes/orders.js và auth.js; Frontend đọc public/app.js, public/lib và public/views. QA chạy npm test, browser QA và container smoke trên CI. Không ghi nhận đóng góp của thành viên chỉ vì có file được trợ lý chuẩn bị.

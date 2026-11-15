@@ -1,19 +1,7 @@
-GiftShop 0.3.0 — kiểm thử API + khởi động demo cục bộ
-
-> giftshop-vku@0.3.0 test
-> node --test tests/*.test.js
-
-✔ Authentication, authorization, inventory transactions and cancellation (1784.811312ms)
-✔ One-command demo starts, seeds once and preserves records across restart (1366.963721ms)
-ℹ tests 2
-ℹ suites 0
-ℹ pass 2
-ℹ fail 0
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 3530.489602
-
-Browser QA Chromium: 5 passed (6.6s).
-https://github.com/TanTai08/WebSouvenir/actions/runs/43695889081
-Không phải UAT hoặc sign-off.
+GiftShop0.4.0 — kết quả đã xác minh
+Source commit: cdd60e3
+CI: https://github.com/TanTai08/WebSouvenir/actions/runs/43707514900
+verify: SUCCESS (syntax, ESLint, Prettier,7 Node tests)
+browser: SUCCESS (7/7 Chromium)
+container: SUCCESS (build + seed + replace container + persisted volume check)
+Không phải UAT/peer approval.

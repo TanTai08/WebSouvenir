@@ -14,7 +14,7 @@ Bằng chứng sau review: __________________
 
 Tiêu chí: Có ma trận pass/fail, test responsive và regression
 
-Trạng thái: API25 case đã pass; UI/UAT chưa chạy
+Trạng thái: 7 Node test và7 browser case pass; UAT chờ
 
 Bằng chứng sau review: __________________
 
@@ -27,3 +27,5 @@ Trạng thái: Mẫu UAT/Retro có; chưa tổ chức
 Bằng chứng sau review: __________________
 
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
+
+Bản0.4: xem docs/ARCHITECTURE.md và docs/QA_RESULTS.md. Đường dẫn server.js nay là entry; nghiệp vụ ở src/routes/, UI ở public/views/.

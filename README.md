@@ -1,83 +1,110 @@
-# GiftShop / WebSouvenir
-Website quản lý cửa hàng đồ lưu niệm cho đồ án QLDA VKU.
-Repo đích: https://github.com/TanTai08/WebSouvenir — PM: @TanTai08.
+# GiftShop / WebSouvenir — 0.4.0
 
-## Trạng thái
-Bản phát triển 0.3.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
+Website quản lý nội bộ cửa hàng đồ lưu niệm cho đồ án QLDA VKU.
 
-## Lấy đúng bản mã nguồn
-Bản triển khai nằm trong PR #1, nhánh `feat/giftshop-initial` (main đang giữ bản khởi tạo để chờ peer review). Clone bằng:
-```sh
-git clone --branch feat/giftshop-initial https://github.com/TanTai08/WebSouvenir.git
-cd WebSouvenir
-```
-Hoặc tải ZIP bản chạy, giải nén và mở terminal tại thư mục có package.json.
+- Repo: https://github.com/TanTai08/WebSouvenir
+- Bản triển khai: nhánh `feat/giftshop-initial`, PR #1; chờ thành viên review trước merge main.
+- Project: https://github.com/users/TanTai08/projects/1
+- PM: @TanTai08; Tech Lead: @Txtien-225; Backend: @LQT23072005; Frontend: @ngonhat21. QA bổ sung sau.
 
-## Chạy ngay bản demo
-Cài Node.js 24 rồi chạy:
-```sh
-npm run demo
-```
-Mở http://127.0.0.1:3000 — tài khoản `admin`, mật khẩu **DEMO** `GiftShop-Demo-2026!`. Lệnh tự tạo database demo riêng và chuẩn bị 3 sản phẩm có nhãn DEMO. Không cần GitHub của các thành viên và không cần npm install để chạy app. Đây là chế độ local loopback, không dùng mật khẩu demo trên production.
+## Chạy ngay trên Windows / VS Code
 
-Windows có thể bấm `start-demo.bat`, macOS/Linux chạy `sh start-demo.sh`.
+Yêu cầu **Node.js24 trở lên**. Mở đúng thư mục có package.json, chạy:
 
-## Chạy tại máy với dữ liệu riêng
-Yêu cầu Node.js 24 trở lên. Không cần npm install vì dùng thư viện có sẵn của Node.
-
-Linux/macOS:
-```sh
-ADMIN_PASSWORD='Thay-bang-mat-khau-rieng-12-ky-tu' npm start
-```
-PowerShell:
 ```powershell
-$env:ADMIN_PASSWORD='Thay-bang-mat-khau-rieng-12-ky-tu'
-npm start
+npm.cmd run demo
 ```
-Mở http://localhost:3000; đăng nhập `admin` và mật khẩu vừa thiết lập. Mật khẩu chỉ khởi tạo lần đầu, thay biến môi trường không đổi mật khẩu tài khoản đã lưu. Không dùng chuỗi ví dụ khi triển khai thật.
-Quản trị viên tạo nhân viên trong màn hình Tài khoản. Vai trò ứng dụng khác vai trò PM/QA trên GitHub. Cơ sở dữ liệu mới không có hàng hóa giả; thêm sản phẩm và nhập hàng trước khi bán.
 
-## Kiểm tra
-```sh
-npm run check
-npm test
+Hoặc bấm `start-demo.bat`. macOS/Linux dùng `npm run demo` hay `sh start-demo.sh`.
+
+Mở **http://127.0.0.1:3000**. Database mới có tài khoản `admin`, mật khẩu demo ban đầu `GiftShop-Demo-2026!` và3 sản phẩm có nhãn DEMO. Nếu đã đổi mật khẩu, dùng mật khẩu mới; restart giữ nguyên dữ liệu/mật khẩu và không seed lại. Giới hạn demo ở loopback, không dùng tài khoản mẫu cho production. Có thể đặt DEMO_DB_PATH để chọn file demo riêng.
+
+Ứng dụng chạy bằng thư viện có sẵn trong Node; không cần npm install để chạy demo. GitHub CLI chỉ cần cho công cụ quản lý Project, không cần để chạy website.
+
+## Cập nhật từ bản0.3
+
+1. Dừng server cũ bằng Ctrl+C.
+2. Sao lưu database trước khi cập nhật, giữ nguyên thư mục `data/`.
+3. Cập nhật source từ nhánh triển khai hoặc giải nén gói mới vào thư mục code. Không thay database bằng database demo khác.
+4. Chạy `npm.cmd run demo`, mở lại trang bằng Ctrl+F5 để tải các module giao diện mới.
+
+Schema cũ tương thích; không cần xóa database. API tạo đơn0.4 bắt buộc `expected_price` ở mỗi dòng hàng; client cũ thiếu trường sẽ bị từ chối. Giao diện0.4 đã gửi trường này.
+
+## Các sửa lỗi0.4
+
+- Giá trong giỏ thay đổi: server trả409 PRICE_CHANGED, không tạo đơn/không trừ kho. Giao diện hiển thị giá mới và chờ người bán xác nhận lại.
+- Demo mở database đã có mà không đăng nhập bằng mật khẩu mẫu để seed, nên restart sau đổi mật khẩu vẫn chạy.
+- Giới hạn đăng nhập theo tài khoản:15 lần sai/15 phút; một tài khoản bị khóa không khóa các tài khoản khác cùng IP. Dữ liệu limiter có giới hạn bộ nhớ, dành cho một instance; chưa là rate limiter phân tán.
+- Phiên đăng nhập mất hiệu lực sẽ xóa giỏ; yêu cầu render cũ bị hủy khi chuyển trang.
+- Backend và frontend tách module; có ESLint, Prettier, test hồi quy và CI build/smoke Docker với volume.
+
+## Cấu trúc để chia việc
+
+```text
+server.js                 # Entry point
+src/database.js           # Schema và khởi tạo SQLite
+src/security.js           # Hash mật khẩu, session, login limiter
+src/http.js               # Validation, JSON, transaction
+src/routes/               # Auth, users, products, inventory, orders, reports
+public/app.js             # Điều phối giao diện, giỏ hàng, phiên đăng nhập
+public/lib/               # API client và UI helper
+public/views/             # Mỗi màn hình một module
+scripts/                  # Demo, backup, quản lý/snapshot Project
+config/team.json          # Thành viên và vai trò
+config/project-plan.json  # Kế hoạch đề xuất20 Issue
+reports/                  # Hồ sơ hiện trạng/dự thảo, chưa nghiệm thu
 ```
-Test dùng database tạm riêng: đăng nhập, phân quyền, mã trùng, số lượng âm, bán vượt kho, hai yêu cầu bán đồng thời, hủy đơn và hoàn kho, CSRF, đăng xuất. Browser QA tự động đã qua 5/5 case Chromium trên CI: https://github.com/TanTai08/WebSouvenir/actions/runs/43695889081. UAT người dùng còn chờ.
 
-## Công nghệ
-Node.js 24 + SQLite + HTML/CSS/JavaScript thuần. Lựa chọn này thay cho đề xuất React/Supabase ban đầu để có bản đầy đủ backend chạy ngay, không phụ thuộc tài khoản cloud hay dịch vụ ngoài. Nhóm cần xác nhận công nghệ này phù hợp môn chuyên ngành trước khi chốt Charter.
+## Kiểm tra kỹ thuật
 
-## Deploy
-Đây là ứng dụng Node có máy chủ, không phải static site: không đưa thẳng lên Cloudflare Pages/Vercel static.
-Có Dockerfile và render.yaml; cấu hình Render đề xuất dùng gói có persistent disk, có phí. Chưa đăng ký/triển khai dịch vụ hay phát sinh chi phí. Không dùng ổ tạm miễn phí để lưu SQLite khi bàn giao thật. Phương án khác: VPS có volume và reverse proxy HTTPS. Nếu bắt buộc hạ tầng miễn phí cần chuyển database sang dịch vụ được quản lý trước khi công bố nghiệm thu.
-Đặt ADMIN_PASSWORD bí mật >=12 ký tự, COOKIE_SECURE=1 khi dùng HTTPS, DB_PATH=/app/data/giftshop.db. Lưu mật khẩu trong secrets của nhà cung cấp, không commit. Mount volume vào /app/data. Sao lưu SQLite bằng công cụ backup hỗ trợ WAL; không chỉ copy file .db lúc đang ghi. Có chức năng đổi mật khẩu khi biết mật khẩu cũ; chưa có khôi phục khi quên.
+Để phát triển và chạy toàn bộ kiểm tra, cài dev dependencies:
 
-## Quy trình nhóm
-Nhánh `feat/<issue>-<ten>` → PR → kiểm thử → ít nhất 1 người khác review → CI xanh → merge. `main` cần bật branch protection trong GitHub. Không gán tác giả thay người khác. Thư mục docs gồm tài liệu DỰ THẢO và mẫu ghi nhận bằng chứng, không thay cho hoạt động thực tế.
+```powershell
+npm.cmd ci --ignore-scripts
+npm.cmd run check
+npm.cmd run lint
+npm.cmd run format:check
+npm.cmd test
+```
 
-## Điểm còn thiếu trước khi nộp
-Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ngành cho Pathway 1; hạn nộp; stakeholder và chính sách thực tế; GitHub Projects và lịch sử Sprint; deploy HTTPS; UAT; chữ ký; CR/Retro thực; báo cáo cuối 15–25 trang và release 1.0.0.
+Browser QA: `npx.cmd playwright install chromium`, rồi `npm.cmd run test:browser`. CI tự chạy trên Ubuntu24.04. Không dùng kết quả tự động thay chữ ký UAT hay review của sinh viên.
 
-## Tiến độ GitHub được xác minh
-- PR triển khai: https://github.com/TanTai08/WebSouvenir/pull/1 (chưa merge, chờ peer review).
-- CI đã pass: https://github.com/TanTai08/WebSouvenir/actions/runs/43693752840
-- Hồ sơ tải/xem tại thư mục reports trên nhánh feat/giftshop-initial.
-- Phiên GitHub đã được cấp quyền ADMIN trên repo sau lần kiểm tra READ ban đầu.
-- Tạo Projects qua API thất bại vì quyền integration; chủ repo tạo Project trên giao diện và liên kết repo.
-- Hồ sơ draft ghi trạng thái lúc khởi tạo; xem tiến độ mới trong README trước khi dùng.
+Muốn định dạng code: `npm.cmd run format`. Công cụ lint/format không cần có trên production.
 
-- Đã tạo 20 Issue và 5 Milestone; không đóng Issue khi chưa được nhóm review.
-- API branch protection trả 403: chủ repo cần bật PR + 1 approval + check verify trên main trong Settings.
+## Chạy production
 
-## Bổ sung phiên bản 0.2.0
-- Chống tạo đơn lặp qua Idempotency-Key; UI giữ mã khi retry cùng giỏ hàng.
-- Đổi mật khẩu và hủy mọi phiên cũ; xem chi tiết đơn; liệt kê tài khoản.
-- config/team.json đã có 5 vị trí. scripts/assign_member.py nhận GitHub và gán Issue theo vai trò khi có quyền.
-- scripts/backup.mjs backup SQLite online; scripts/demo.mjs chuẩn bị dữ liệu có nhãn DEMO.
-- Xem docs/HANDOVER.md để bàn giao theo 5 vai trò.
+```powershell
+$env:ADMIN_PASSWORD='Mat-khau-rieng-tu-12-ky-tu'
+$env:DB_PATH='data/production.db'
+npm.cmd start
+```
 
-## Kiểm thử trình duyệt
-Có bộ Playwright E2E trên GitHub Actions, gồm đăng nhập sai, luồng admin đầy đủ, staff, viewport mobile và đổi mật khẩu. Trên máy hỗ trợ browser: `npm ci`, `npx playwright install chromium`, `npm run test:browser`. Kết quả và ảnh chụp nằm trong artifact browser-qa của run. Đây là QA tự động, không phải UAT hoặc peer review của sinh viên.
+ADMIN_PASSWORD chỉ dùng khởi tạo khi chưa có user; không reset mật khẩu cũ. Khi triển khai HTTPS đặt COOKIE_SECURE=1; giữ ADMIN_PASSWORD trong secrets của nhà cung cấp, không commit. DB_PATH phải nằm trên persistent volume. GET /health dùng để kiểm tra readiness.
 
-## Thiết lập Project trên tài khoản chủ repo
-Kế hoạch20 Issue đã chuẩn bị tại config/project-plan.json; QA để trống. Kết nối ChatGPT bị GitHub từ chối quyền sửa Project. Chạy `npm.cmd run project:plan` hoặc `npm.cmd run project:apply` trên máy đã đăng nhập GitHub CLI với scope project. Xem docs/PROJECT_PLAN.md.
+Có Dockerfile và render.yaml. Render cấu hình dùng persistent disk và có thể phát sinh phí; chưa đăng ký dịch vụ trả phí hoặc triển khai production. Node/SQLite cần máy chủ với ổ lưu bền, không đưa thẳng source này lên static Pages. Database phù hợp một instance; không chạy nhiều instance với các file SQLite tách biệt.
+
+## Backup / restore
+
+```powershell
+node scripts/backup.mjs data/demo.db data/backup-moi.db
+```
+
+Script dùng online backup hỗ trợ WAL và không ghi đè đích có sẵn. Giữ backup ngoài repo. Restore: dừng server, sao lưu hiện trạng, kiểm integrity của bản backup, thay file đích và xử lý WAL/SHM cũ khi server đã dừng, khởi động rồi đối chiếu dữ liệu. CI kiểm tra dữ liệu còn khi thay container với cùng volume; restore production vẫn cần diễn tập trên hạ tầng được chọn.
+
+## Quản lý Project
+
+Chủ repo đã tạo Board/Table public,20 Issue,5 Milestone,5 Status, Sprint và Story Points. Điểm hiện là đề xuất, nhóm cần xác nhận. Công cụ riêng cần GitHub CLI đăng nhập TanTai08 với scope project:
+
+```powershell
+npm.cmd run project:plan
+npm.cmd run project:apply
+npm.cmd run project:snapshot
+```
+
+Xem docs/PROJECT_PLAN.md. Kết nối chat chỉ đọc Projects, chưa sửa được trực tiếp. scripts/assign_member.py giúp bổ sung QA và gán Issue sau. Role/GitHub không tự tạo lịch sử đóng góp.
+
+## Việc còn lại để nộp môn
+
+Peer review/merge PR; xác nhận các required checks trên main; QA và họ tên/MSSV/tỷ lệ đóng góp; môn kế thừa, deadline, stakeholder; HTTPS production; Sprint/Retro/Risk/CR thật; UAT/sign-off; báo cáo cuối và release v1.0.0. Hồ sơ15 trang hiện là báo cáo kỹ thuật theo trạng thái đã xác minh, chưa phải xác nhận hoàn thành học kỳ.
+
+Xuất lại báo cáo (tùy chọn cho người chỉnh tài liệu): cài Python3, `pip install reportlab python-docx`, chạy `python scripts/build_report.py`. PDF dùng font Unicode có sẵn trên Windows/Linux/macOS hoặc đường dẫn REPORT_FONT. Bản DOCX trong reports có thể chỉnh trực tiếp bằng Word.

@@ -9,13 +9,17 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from docx import Document
 root=Path(__file__).resolve().parents[1];out=root/'reports';team=json.loads((root/'config/team.json').read_text())
-pdfmetrics.registerFont(TTFont('VN','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'));styles=getSampleStyleSheet()
+import os
+font_candidates=[os.environ.get('REPORT_FONT',''),'/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf','C:/Windows/Fonts/arial.ttf','/System/Library/Fonts/Supplemental/Arial.ttf']
+font=next((f for f in font_candidates if f and Path(f).is_file()),None)
+if not font:raise FileNotFoundError('Set REPORT_FONT to a Unicode TrueType font path.')
+pdfmetrics.registerFont(TTFont('VN',font));styles=getSampleStyleSheet()
 for st in styles.byName.values():st.fontName='VN'
 styles['Normal'].fontSize=10;styles['Normal'].leading=16;styles['Title'].fontSize=20;styles['Heading1'].fontSize=16;styles['Heading2'].fontSize=12
 pages=[]
 def page(title,paras,headers=None,rows=None):pages.append((title,paras,headers,rows))
 page('Chương 1 — Tổng quan dự án',[
-'GiftShop / WebSouvenir là website quản lý nội bộ cửa hàng bán đồ lưu niệm. Bản báo cáo này ghi nhận hiện trạng kỹ thuật của phiên bản 0.3.0; không khẳng định dự án đã hoàn tất học kỳ hoặc đã được nghiệm thu.',
+'GiftShop / WebSouvenir là website quản lý nội bộ cửa hàng bán đồ lưu niệm. Bản báo cáo này ghi nhận hiện trạng kỹ thuật của phiên bản 0.4.0; không khẳng định dự án đã hoàn tất học kỳ hoặc đã được nghiệm thu.',
 'Nhóm đã chọn Pathway 1 và định hướng Agile/Scrum. Các trường môn chuyên ngành kế thừa, hạn nộp, stakeholder, họ tên và MSSV được để trống theo yêu cầu của PM để hoàn thiện sau. Chưa có kết quả khảo sát cửa hàng; các khó khăn về quản lý thủ công mới là giả thuyết cần xác minh.',
 'Phần mềm đã có backend, cơ sở dữ liệu lưu trên máy chủ, xác thực và phân quyền. Sản phẩm không phải giao diện tĩnh. Tuy nhiên chưa có URL production HTTPS được xác nhận, vì vậy điều kiện sản phẩm triển khai công khai chưa hoàn thành.',
 'Các phần sau phân biệt rõ kết quả đã kiểm thử, cấu hình đã tạo và hoạt động cần con người thực hiện. Bằng chứng trực tuyến được lưu tại repo TanTai08/WebSouvenir, Pull Request #1 và GitHub Actions. Phiên bản đã được sinh với hỗ trợ Codex; không gán lịch sử commit cho các thành viên chưa tham gia.'
@@ -57,8 +61,8 @@ page('Chương 4 — Ước lượng và lịch trình',[
 'Chưa có hạn nộp được cung cấp. Các mốc học phần tuần 6/11/13/14/15 được giữ trong Charter, không tự gán ngày hoặc hồi tố lịch sử.'
 ],['Nút','Đầu ra','Thời lượng','ES → EF'],[['A','Khảo sát / Charter','1 tuần','0 → 1'],['B','Kiến trúc / WBS','1 tuần','1 → 2'],['C','Sản phẩm / nhập kho','2 tuần','2 → 4'],['D','Bán hàng / hủy','2 tuần','4 → 6'],['E','QA / UAT / deploy','1 tuần','6 → 7'],['F','Bàn giao','1 tuần','7 → 8']])
 page('Chương 4 — Theo dõi Sprint và chỉ số',[
-'GitHub đã có 20 Issue và năm Milestone: Charter và WBS, Sprint 1, Sprint 2, UAT và bàn giao, Evidence và bảo vệ. Việc PM đã có assignee; các vai trò chưa có tài khoản chưa được gán người giả.',
-'API tạo Project trả lỗi Resource not accessible by integration. Vì vậy chưa tồn tại URL GitHub Projects được xác nhận. Chủ repo cần tạo Board, thêm Issue, Status và trường Sprint/Estimate; scripts không tự tạo lịch sử giả để bù phần thiếu.',
+'GitHub đã có 20 Issue và năm Milestone: Charter và WBS, Sprint 1, Sprint 2, UAT và bàn giao, Evidence và bảo vệ. PM, Technical Lead, Backend và Frontend đã có assignee theo tài khoản xác nhận; QA để trống.',
+'Chủ repo đã tạo Project công khai tại github.com/users/TanTai08/projects/1, có Board/Table và20 Issue. Kế hoạch đã được người dùng áp dụng bằng GitHub CLI:10 Issue Sprint1/38 điểm đề xuất,6 Issue Sprint2/31 điểm và4 Issue Sprint3/16 điểm. Có9 Backlog,3 Ready,8 In Review, chưa Done. Đây là dữ liệu kế hoạch và trạng thái hiện tại, không thay lịch sử cả học kỳ.',
 'Burndown cần khối lượng scope và khối lượng còn lại theo thời gian thực tế. Khi có thay đổi scope phải dẫn CR và giải thích bước nhảy trong biểu đồ. Không vẽ số liệu giảm đều để minh họa rồi dùng như evidence.',
 'Velocity là tổng Story Points của công việc đạt DoD trong một Sprint. PR throughput là số PR hoàn thành trong khoảng đo. Chưa có hai Sprint thực nên báo cáo chưa có các giá trị này. Workbook có sheet ghi dữ liệu Burndown nhưng không điền số mô phỏng.'
 ],['Chỉ số','Cách lấy','Hiện trạng'],[['Velocity','Tổng SP đạt DoD / Sprint','Chưa có dữ liệu Sprint'],['Burndown','Snapshot remaining points mỗi ngày','Mẫu trống'],['PR throughput','PR đã merge theo kỳ','Chờ review/merge'],['Defect trend','Lỗi mở/đóng theo thời gian','Chưa có bug log UI/UAT'],['CI','Run cụ thể theo commit','Có run bản khởi tạo pass']])
@@ -66,26 +70,26 @@ page('Chương 5 — Kiến trúc và mô hình dữ liệu',[
 'Hệ thống dùng Node.js 24 với các module tiêu chuẩn: node:http xử lý yêu cầu, node:sqlite lưu dữ liệu, node:crypto xử lý mật khẩu và session token. Frontend HTML/CSS/JavaScript gọi API cùng origin, không chứa khóa dịch vụ ngoài.',
 'SQLite bật foreign_keys và WAL. Các thay đổi tồn kho quan trọng chạy trong BEGIN IMMEDIATE, commit khi mọi bước thành công và rollback nếu lỗi. Thiết kế này phù hợp ứng dụng nhỏ chạy một máy chủ, chưa phù hợp tự động mở nhiều instance dùng cùng file trên các ổ tách biệt.',
 'Bảng products giữ số tồn hiện tại; movements giữ các biến động để đối chiếu; orders/items ghi lịch sử bán. checkout_requests liên kết người tạo, idempotency key, payload và đơn đã tạo nhằm trả lại cùng đơn khi retry.',
-'Không lưu mật khẩu dạng rõ; users giữ salt và hash scrypt. Sessions chứa token ngẫu nhiên và hạn dùng. Database là dữ liệu vận hành, được loại khỏi Git và gói source; khi triển khai phải có volume và bản sao lưu.'
+'Không lưu mật khẩu dạng rõ; users giữ salt và hash scrypt. Bản0.4 dùng hash bất đồng bộ và kiểm lại hash hiện tại trước khi phát hành session hoặc cập nhật mật khẩu. Sessions chứa token ngẫu nhiên và hạn dùng. Database là dữ liệu vận hành, được loại khỏi Git và gói source; khi triển khai phải có volume và bản sao lưu.'
 ],['Bảng','Vai trò / quan hệ'],[['users / sessions','Danh tính, quyền, token có thời hạn'],['products','SKU duy nhất, giá VND, tồn không âm'],['orders / items','Trạng thái, tổng tiền, chi tiết snapshot'],['movements','Nhập/bán/hoàn hàng có người thao tác'],['checkout_requests','Chống tạo trùng đơn cho mỗi người/mã']])
 page('Chương 5 — Xác thực và an toàn dữ liệu',[
 'Đăng nhập kiểm tra username và mật khẩu, tạo token session ngẫu nhiên 32 byte. Cookie có HttpOnly, SameSite=Strict và thời hạn tám giờ. Khi triển khai HTTPS phải đặt COOKIE_SECURE=1 để bật thuộc tính Secure.',
 'Server kiểm quyền admin cho thay đổi sản phẩm, nhập kho, tạo/xem tài khoản, thống kê và hủy đơn. Việc ẩn nút ở frontend chỉ giúp trải nghiệm, không phải lớp bảo vệ chính. Test gọi trực tiếp API bằng tài khoản staff để xác minh 403.',
 'Đổi mật khẩu yêu cầu mật khẩu hiện tại và mật khẩu mới dài 12–256 ký tự. Sau khi đổi, mọi session của tài khoản bị xóa nên cần đăng nhập lại. Chưa có chức năng khôi phục khi quên mật khẩu hoặc email xác minh.',
-'Server giới hạn kích thước body, xác nhận kiểu dữ liệu, dùng prepared statements, kiểm tra Origin cho thao tác ghi và đặt CSP. Rate limit đăng nhập hiện lưu trong bộ nhớ theo địa chỉ socket; trước khi chạy tải cao sau proxy cần thiết kế chính sách IP tin cậy và giám sát phù hợp. Đây là giới hạn được ghi nhận, không phải chứng nhận bảo mật.'
+'Server giới hạn kích thước body, xác nhận kiểu dữ liệu, dùng prepared statements, kiểm tra Origin cho thao tác ghi và đặt CSP. Rate limit0.4 lưu trong bộ nhớ theo tài khoản,15 lỗi/15 phút, giới hạn số bản ghi và hết hạn; không khóa các tài khoản khác chung IP. Đây là giải pháp cho một instance, chưa phân tán. Đây là giới hạn được ghi nhận, không phải chứng nhận bảo mật.'
 ],['Kiểm soát','Mục đích'],[['scrypt + salt','Hạn chế lộ mật khẩu rõ khi DB bị đọc'],['HttpOnly / SameSite / Secure','Giảm truy cập cookie và yêu cầu chéo nguồn'],['Prepared statements','Không ghép dữ liệu đầu vào vào SQL'],['Server-side role checks','Chặn thao tác vượt quyền'],['Input validation / CSP','Giảm dữ liệu sai và script ngoài']])
 page('Chương 5 — Giao dịch bán hàng và phục hồi',[
 'Khi xác nhận bán, frontend giữ Idempotency-Key cho cùng giỏ hàng qua các lần retry. Server buộc có key hợp lệ, tìm bản ghi cũ theo user/key và trả lại order_id nếu payload giống. Nếu key đã dùng với payload khác, server trả 409.',
-'Trong giao dịch, server đọc từng sản phẩm còn hoạt động, kiểm tra số lượng nguyên dương, không trùng product_id, đủ stock và tổng tiền an toàn. Sau đó mới tạo đơn, lưu items, trừ stock, ghi movements và lưu idempotency request. Mọi bước cùng commit hoặc rollback.',
+'Trong giao dịch, server đọc từng sản phẩm còn hoạt động, kiểm tra số lượng nguyên dương, không trùng product_id, đủ stock và tổng tiền an toàn. Bản0.4 kiểm thêm expected_price của từng dòng; nếu giá khác giá hiện tại, trả409 PRICE_CHANGED, không ghi đơn, UI hiển thị giá mới và chờ xác nhận. Sau đó mới tạo đơn, lưu items, trừ stock, ghi movements và lưu idempotency request. Mọi bước cùng commit hoặc rollback.',
 'Hủy đơn chỉ chấp nhận trạng thái paid. Các dòng hàng được hoàn kho, ghi movements và đổi trạng thái cancelled trong cùng giao dịch. Yêu cầu hủy lần nữa bị từ chối, tránh cộng tồn hai lần. Giới hạn số tồn khi hoàn kho cũng được kiểm tra.',
 'Script backup dùng SQLite online backup để sao chép nhất quán khi WAL đang bật. Test đã mở bản backup ở chế độ read-only, kiểm PRAGMA integrity_check và đối chiếu stock cùng số request. Restore production đầy đủ, downtime và quy trình sao lưu định kỳ cần được xác minh trên nơi triển khai thật.'
 ],['Tình huống','Kết quả đã kiểm tra'],[['Hai yêu cầu bán 4 khi còn 5','Một đơn thành công, một bị từ chối'],['Retry cùng key / payload','Cùng order_id, tồn chỉ trừ một lần'],['Cùng key, đổi giỏ','409 Conflict'],['Hủy đơn lần hai','400; không hoàn thêm hàng'],['Backup DB đang hoạt động','integrity_check = ok']])
 page('Chương 5 — Kiểm thử và CI',[
 'Kiểm thử tích hợp chạy server thật với database tạm độc lập và request HTTP. Các tài khoản và hàng tạo trong test được xóa cùng thư mục tạm sau khi chạy. Dữ liệu này chỉ là fixture kiểm thử, không dùng làm bằng chứng người dùng thật.',
-'Npm run check kiểm tra cú pháp server, frontend và script vận hành. Npm test kiểm tra luồng xác thực, quyền, nhập/bán/hủy, idempotency, đổi mật khẩu, backup và validation. Test ghi kết quả thật tại docs/verification.txt khi đóng gói.',
-'Workflow GitHub Actions chạy Node 24, check và test trên PR hoặc push main. Run của bản khởi tạo đã pass; PR cập nhật cần có run mới và peer approval trước khi merge. API cấu hình branch protection bị 403 nên chưa xác minh được enforcement trên main.',
-'Đã chạy QA trình duyệt tự động trên GitHub Actions: 5/5 case Chromium pass, gồm login sai, admin bán/hủy, staff, viewport 390x844 và đổi mật khẩu. Run: https://github.com/TanTai08/WebSouvenir/actions/runs/43695889081. Kết quả này không thay UAT hoặc mọi kiểm tra khả dụng; cần đánh giá thêm bàn phím, mất mạng và người dùng thật.'
-],['Nhóm test','Kết quả / phạm vi'],[['Authentication / role','Test API đã qua'],['Inventory / cancellation','Test API đã qua'],['Idempotency / validation','Test API đã qua'],['Password / backup integrity','Test API đã qua'],['Browser Chromium','5/5 case pass trên CI'],['UAT / tải production','Chưa thực hiện']])
+'Npm run check kiểm tra cú pháp; npm run lint dùng ESLint và format:check dùng Prettier. Backend/UI đã tách module để review theo vai trò. Npm test kiểm tra luồng xác thực, quyền, nhập/bán/hủy, idempotency, đổi mật khẩu, backup và validation. Test ghi kết quả thật tại docs/verification.txt khi đóng gói.',
+'Workflow GitHub Actions chạy Node 24, check và test trên PR hoặc push main. Run của bản khởi tạo đã pass; PR cập nhật cần có run mới và peer approval trước khi merge. GitHub báo main đã protected; API chưa cho đọc chi tiết required approval/checks nên vẫn cần chủ repo xác nhận trên giao diện.',
+'Đã chạy QA trình duyệt tự động trên GitHub Actions: 7/7 case Chromium pass, gồm login sai, admin bán/hủy, staff, mobile, đổi mật khẩu, xác nhận giá và reset giỏ khi session mất hiệu lực. Run: https://github.com/TanTai08/WebSouvenir/actions/runs/43707514900. Kết quả này không thay UAT hoặc mọi kiểm tra khả dụng; cần đánh giá thêm bàn phím, mất mạng và người dùng thật.'
+],['Nhóm test','Kết quả / phạm vi'],[['Authentication / role','Test API đã qua'],['Inventory / cancellation','Test API đã qua'],['Idempotency / validation','Test API đã qua'],['Password / backup integrity','Test API đã qua'],['Browser Chromium','7/7 case pass trên CI'],['Docker','Build và thay container giữ volume đã qua'],['UAT / tải production','Chưa thực hiện']])
 page('Chương 6 — Rủi ro và thay đổi',[
 'Rủi ro được quản lý theo ba bước Identify, Analyze, Respond & Monitor; thang Probability/Impact 1–5 là đề xuất cần đối chiếu quy định môn. Initial register ghi các nguy cơ cụ thể, còn Week06 và Week11 được giữ trống đến khi có cập nhật thật.',
 'Biến cố quyền repo đã có diễn biến thực: kiểm tra ban đầu READ, sau đó được ADMIN và đã push nhánh/PR. Tuy nhiên quyền integration với Projects và branch protection vẫn bị giới hạn. Đây là sự kiện kỹ thuật có bằng chứng, chưa tự động thay thế CR thay đổi phạm vi do stakeholder phê duyệt.',
@@ -94,12 +98,12 @@ page('Chương 6 — Rủi ro và thay đổi',[
 ],['Rủi ro','Phản ứng / hiện trạng'],[['Quyền ghi repo','Đã được cấp; còn giới hạn Projects/protection'],['Đơn lặp khi retry','Đã bổ sung key và kiểm thử'],['Mất SQLite trên ổ tạm','Chưa deploy; cần volume hoặc đổi DB'],['Chưa có stakeholder','Để trống; PM bổ sung sau'],['Thiếu UAT thật','Browser CI đã qua; UAT chưa tổ chức']])
 page('Chương 7 — Bàn giao, nghiệm thu và vận hành',[
 'Bộ bàn giao hiện có mã nguồn, README, hướng dẫn theo vai trò, test, Dockerfile, cấu hình Render, script backup/demo và hồ sơ PDF/DOCX/XLSX/PPTX. Các tài liệu nằm trong reports và docs trên nhánh feat/giftshop-initial; chưa gộp main vì cần review.',
-'Ứng dụng cần Node 24 và lưu trữ bền. ADMIN_PASSWORD dùng để khởi tạo lần đầu, không phải công cụ tự đổi mật khẩu khi database đã tồn tại. COOKIE_SECURE=1 được dùng sau HTTPS; DB_PATH phải trỏ vào volume. Cấu hình Render có thể có phí và chưa được đăng ký.',
+'Ứng dụng cần Node 24 và lưu trữ bền. ADMIN_PASSWORD dùng để khởi tạo lần đầu, không phải công cụ tự đổi mật khẩu khi database đã tồn tại. Demo0.4 bỏ qua seed trên database có sẵn, nên đổi mật khẩu không làm restart thất bại. COOKIE_SECURE=1 được dùng sau HTTPS; DB_PATH phải trỏ vào volume. Cấu hình Render có thể có phí và chưa được đăng ký.',
 'UAT cần người nghiệm thu thật chạy kịch bản nhập hàng → bán → kiểm tồn → hủy → đối chiếu doanh thu, cùng kiểm quyền và phục hồi. Mỗi case ghi dữ liệu đầu vào, kết quả mong đợi, kết quả thực tế, pass/fail và bằng chứng. Hiện chưa có chữ ký hoặc email xác nhận.',
 'Bảo vệ có 6 phút trình bày, 5 phút demo và 5 phút Q&A theo tài liệu môn. Slide đã có bản 10 trang để cập nhật dữ liệu thật. Cần dữ liệu demo có nhãn, bản local/video dự phòng và diễn tập với đủ vai trò trước bảo vệ.'
 ],['Người bàn giao','Nội dung cần trình bày'],[['PM','Phạm vi, kế hoạch, thay đổi và bằng chứng'],['Tech Lead','Kiến trúc, CI, deploy, backup'],['Backend','Transaction, quyền, idempotency'],['Frontend','Luồng sử dụng và xử lý lỗi'],['QA','Test, defect, DoD và UAT']])
 page('Chương 7 — Kết luận hiện trạng và việc cần xác nhận',[
-'Bản 0.3.0 đã hoàn thiện thêm các phần kỹ thuật có thể kiểm tra độc lập và chuẩn bị đủ vị trí cho nhóm năm người. Việc thêm username được tách khỏi mã ứng dụng, giúp gán nhiệm vụ sau mà không viết lại phần mềm.',
+'Bản 0.4.0 đã hoàn thiện thêm các phần kỹ thuật có thể kiểm tra độc lập và chuẩn bị đủ vị trí cho nhóm năm người. Việc thêm username được tách khỏi mã ứng dụng, giúp gán nhiệm vụ sau mà không viết lại phần mềm.',
 'Điều chưa hoàn thành là các điều kiện cần dữ liệu và hoạt động thực: thông tin đầy đủ của các thành viên và tài khoản QA, thông tin học phần, người nghiệm thu, lịch sử hai Sprint, review của thành viên, UAT, HTTPS và chữ ký. Theo yêu cầu PM, các trường này được để trống để cập nhật sau.',
 'Báo cáo hiện trạng không tuyên bố vượt Authenticity Gate. Bản nộp cuối kỳ cần thay các mục pending bằng kết quả có nguồn, được nhóm và stakeholder xác nhận. Không tạo release v1.0.0 trước nghiệm thu hoặc coi repo mới tạo là lịch sử cả học kỳ.',
 'Bài học kỹ thuật đã rút ra từ phiên phát triển: cần phân biệt quyền repo với quyền integration; xử lý retry ngoài việc disable nút; dùng backup hiểu WAL; phân biệt test tự động với kiểm thử chấp nhận người dùng. Bài học phối hợp nhóm chỉ được ghi sau khi nhóm thực hành thật.'
@@ -118,7 +122,7 @@ for n,(title,paras,heads,rows) in enumerate(pages):
   for r in rows:
    for c,v in zip(dt.add_row().cells,r):c.text=str(v)
 def footer(c,d):
- c.setFont('VN',8);c.drawString(44,26,'GiftShop 0.3.0 · Hiện trạng kỹ thuật · Không thay thế nghiệm thu');c.drawRightString(550,26,str(d.page))
+ c.setFont('VN',8);c.drawString(44,26,'GiftShop 0.4.0 · Hiện trạng kỹ thuật · Không thay thế nghiệm thu');c.drawRightString(550,26,str(d.page))
 SimpleDocTemplate(str(out/'04_Technical_Report_CURRENT.pdf'),leftMargin=44,rightMargin=44,topMargin=38,bottomMargin=45).build(story,onFirstPage=footer,onLaterPages=footer)
 doc.save(out/'04_Technical_Report_CURRENT.docx')
 print('Created 04_Technical_Report_CURRENT.pdf + docx')

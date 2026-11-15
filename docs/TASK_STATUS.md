@@ -7,7 +7,7 @@ Code/tài liệu được hỗ trợ bởi Codex; không đồng nghĩa thành v
 |GS01|PM|Xác nhận đề tài, môn kế thừa và người nghiệm thu|Chờ dữ liệu PM bổ sung|
 |GS02|PM|Phỏng vấn và chốt phạm vi|Chờ khảo sát/người dùng thật|
 |GS03|Tech Lead|Review kiến trúc và DB|Có kiến trúc/ERD; chờ Tech Lead review|
-|GS04|Tech Lead|Thiết lập repo, CI và bảo vệ main|CI đã có; protection và Project chờ quyền|
+|GS04|Tech Lead|Thiết lập repo, CI và bảo vệ main|CI lint/format/test/Docker đã qua; Project đã có, main protected; required checks chờ chủ repo xác nhận|
 |GS05|Backend|Đăng nhập và phân quyền|API/UI/test có; chờ peer review|
 |GS06|Backend|API quản lý sản phẩm|API/test có; chờ review|
 |GS07|Frontend|Giao diện sản phẩm và tìm kiếm|UI có; CI Chromium pass; chờ peer review|
@@ -19,8 +19,8 @@ Code/tài liệu được hỗ trợ bởi Codex; không đồng nghĩa thành v
 |GS13|Backend|Hủy đơn và hoàn kho|Hủy/hoàn kho/test có; chờ review|
 |GS14|Frontend|Dashboard và doanh thu theo ngày|Dashboard và browser CI có; nghiệp vụ chờ xác nhận|
 |GS15|PM|Risk update 2 và xử lý CR thực tế|Risk initial có; chưa có CR/Sprint update thật|
-|GS16|QA|Kiểm thử tích hợp và giao diện|API và 5 browser case pass; UAT chờ|
-|GS17|Tech Lead|Deploy HTTPS, volume và backup|Docker/backup có; HTTPS chưa có|
+|GS16|QA|Kiểm thử tích hợp và giao diện|7 Node test và7 browser case pass; Docker smoke pass; UAT chờ|
+|GS17|Tech Lead|Deploy HTTPS, volume và backup|Docker build/volume smoke và backup đã qua; HTTPS production chưa có|
 |GS18|QA|UAT và Final Retro|Mẫu UAT/Retro có; chưa tổ chức|
 |GS19|PM|Hoàn thiện báo cáo và evidence|Báo cáo kỹ thuật15 trang có; evidence học kỳ chưa đủ|
 |GS20|PM|Slide, rubric và diễn tập|Slide10 trang có; chưa diễn tập|

@@ -45,3 +45,5 @@ Bằng chứng sau review: __________________
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
 
 Đã xác minh @LQT23072005 có quyền write trên repo. Đã gán các Issue Backend #6, #7, #9, #12, #14; Assignees hiển thị trên Project từ các Issue được liên kết.
+
+Bản0.4: xem docs/ARCHITECTURE.md và docs/QA_RESULTS.md. Đường dẫn server.js nay là entry; nghiệp vụ ở src/routes/, UI ở public/views/.

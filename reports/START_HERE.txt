@@ -1,12 +1,12 @@
-GIFTSHOP 0.3.0 — BẢN CHẠY LOCAL
+GIFTSHOP0.4.0 — BẢN CẢI TIẾN CHẠY LOCAL
 
-1. Giải nén GiftShop_Source.zip.
-2. Cài Node.js24 trở lên.
-3. Windows: bấm start-demo.bat. Mac/Linux: sh start-demo.sh. Hoặc npm run demo.
-4. Mở http://127.0.0.1:3000
-5. Login: admin / GiftShop-Demo-2026! (chỉ demo local).
-6. Có sẵn3 sản phẩm DEMO, database demo riêng; giữ dữ liệu sau restart.
-7. Team5 vị trí tại config/team.json. PM TanTai08;4 GitHub để bổ sung sau. Không cần tài khoản GitHub để chạy app.
-8. API + demo tests và5 browser case đã pass; xem docs/QA_RESULTS.md.
-9. Báo cáo mới: 04_Technical_Report_CURRENT.pdf.
-10. Đây chưa phải bản đã nghiệm thu: chưa HTTPS production, UAT, peer review, chữ ký hay evidence Sprint thật.
+Windows: Node24, mở thư mục có package.json, npm.cmd run demo hoặc start-demo.bat.
+Website: http://127.0.0.1:3000
+DB mới: admin / GiftShop-Demo-2026! (chỉ demo). DB cũ: giữ password đã đổi, không seed lại.
+Cập nhật: dừng app, backup data, cập nhật source, giữ data/, chạy và Ctrl+F5 trong trình duyệt. Không cần xóa database.
+Đã sửa stale price, restart sau đổi password, khóa nhiều account cùng IP, reset giỏ khi session mất hiệu lực.
+Code đã tách module backend/frontend.
+CI: syntax/lint/format,7 Node tests,7 browser tests, Docker build + thay container giữ volume đều pass.
+QA GitHub vẫn để trống; PM TanTai08, TL Txtien-225, Backend LQT23072005, Frontend ngonhat21.
+Báo cáo mới: 04_Technical_Report_CURRENT.pdf.
+Còn cần review của thành viên, UAT, HTTPS production, chữ ký và evidence học kỳ; chưa release1.0.0.

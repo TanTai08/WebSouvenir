@@ -1,24 +1,22 @@
-# Tự đánh giá và điều kiện nộp
-
-**DỰ THẢO — CHƯA PHÊ DUYỆT / CHƯA ĐỦ ĐIỀU KIỆN NỘP CUỐI KỲ**
+# Tự đánh giá hiện trạng0.4 — DỰ THẢO
 
 ## Cổng chân thực
 
-CHƯA ĐẠT ĐIỀU KIỆN XÁC NHẬN: chưa có lịch sử repo/board cả kỳ, deployment HTTPS, UAT và biến cố quản lý được xử lý có bằng chứng.
+Chưa xác nhận đạt: thiếu HTTPS production, nghiệm thu và lịch sử thực hiện học kỳ.
 
-## Kế hoạch — 30%
+## Kế hoạch30%
 
-Có bản dự thảo Charter, WBS và Risk. Chưa được phê duyệt; chưa chốt người, lịch, ngân sách và người nghiệm thu. Chưa tự chấm điểm số.
+Có Charter/WBS/Risk và bảng kế hoạch20 Issue,85 điểm đề xuất. Cần phê duyệt, thông tin thật và lịch nguồn lực; chưa tự chấm điểm.
 
-## Phương pháp — 20%
+## Phương pháp20%
 
-Đã chọn định hướng Scrum, chưa có bằng chứng thực hành Sprint và Retro. Chưa tự chấm điểm số.
+Đã chọn Scrum và có Iteration; chưa có bằng chứng Planning/Review/Retro thực của nhóm. Chưa tự chấm điểm.
 
-## Thực thi — 30%
+## Thực thi30%
 
-Có bản mã và test API cục bộ; chưa có PR review, Actions thực, board history, Burndown hay CR thật. Chưa tự chấm điểm số.
+Có source, CI7 Node/7 browser/Docker, Project và phân công4 người; thiếu peer approval, chỉ số Sprint, CR và risk updates thật. Chưa tự chấm điểm.
 
-## Bảo vệ — 20%
+## Bảo vệ20%
 
-Có slide dự thảo 10 trang; chưa diễn tập, live deploy và Q&A. Chưa tự chấm điểm số.
+Có slide10 trang và kịch bản demo; chưa diễn tập/UAT. Chưa tự chấm điểm.
 
