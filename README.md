@@ -3,7 +3,7 @@ Website quản lý cửa hàng đồ lưu niệm cho đồ án QLDA VKU.
 Repo đích: https://github.com/TanTai08/WebSouvenir — PM: @TanTai08.
 
 ## Trạng thái
-Bản phát triển 0.1.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
+Bản phát triển 0.2.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
 
 ## Chạy tại máy
 Yêu cầu Node.js 24 trở lên. Không cần npm install vì dùng thư viện có sẵn của Node.
@@ -33,7 +33,7 @@ Node.js 24 + SQLite + HTML/CSS/JavaScript thuần. Lựa chọn này thay cho đ
 ## Deploy
 Đây là ứng dụng Node có máy chủ, không phải static site: không đưa thẳng lên Cloudflare Pages/Vercel static.
 Có Dockerfile và render.yaml; cấu hình Render đề xuất dùng gói có persistent disk, có phí. Chưa đăng ký/triển khai dịch vụ hay phát sinh chi phí. Không dùng ổ tạm miễn phí để lưu SQLite khi bàn giao thật. Phương án khác: VPS có volume và reverse proxy HTTPS. Nếu bắt buộc hạ tầng miễn phí cần chuyển database sang dịch vụ được quản lý trước khi công bố nghiệm thu.
-Đặt ADMIN_PASSWORD bí mật >=12 ký tự, COOKIE_SECURE=1 khi dùng HTTPS, DB_PATH=/app/data/giftshop.db. Lưu mật khẩu trong secrets của nhà cung cấp, không commit. Mount volume vào /app/data. Sao lưu SQLite bằng công cụ backup hỗ trợ WAL; không chỉ copy file .db lúc đang ghi. Chưa có chức năng reset mật khẩu; cần bổ sung trước khi vận hành lâu dài.
+Đặt ADMIN_PASSWORD bí mật >=12 ký tự, COOKIE_SECURE=1 khi dùng HTTPS, DB_PATH=/app/data/giftshop.db. Lưu mật khẩu trong secrets của nhà cung cấp, không commit. Mount volume vào /app/data. Sao lưu SQLite bằng công cụ backup hỗ trợ WAL; không chỉ copy file .db lúc đang ghi. Có chức năng đổi mật khẩu khi biết mật khẩu cũ; chưa có khôi phục khi quên.
 
 ## Quy trình nhóm
 Nhánh `feat/<issue>-<ten>` → PR → kiểm thử → ít nhất 1 người khác review → CI xanh → merge. `main` cần bật branch protection trong GitHub. Không gán tác giả thay người khác. Thư mục docs gồm tài liệu DỰ THẢO và mẫu ghi nhận bằng chứng, không thay cho hoạt động thực tế.
@@ -51,3 +51,10 @@ Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ng�
 
 - Đã tạo 20 Issue và 5 Milestone; không đóng Issue khi chưa được nhóm review.
 - API branch protection trả 403: chủ repo cần bật PR + 1 approval + check verify trên main trong Settings.
+
+## Bổ sung phiên bản 0.2.0
+- Chống tạo đơn lặp qua Idempotency-Key; UI giữ mã khi retry cùng giỏ hàng.
+- Đổi mật khẩu và hủy mọi phiên cũ; xem chi tiết đơn; liệt kê tài khoản.
+- config/team.json đã có 5 vị trí. scripts/assign_member.py nhận GitHub và gán Issue theo vai trò khi có quyền.
+- scripts/backup.mjs backup SQLite online; scripts/demo.mjs chuẩn bị dữ liệu có nhãn DEMO.
+- Xem docs/HANDOVER.md để bàn giao theo 5 vai trò.
