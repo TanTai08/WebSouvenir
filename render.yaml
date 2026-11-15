@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: giftshop-vku
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: DB_PATH
+        value: /app/data/giftshop.db
+    disk:
+      name: giftshop-data
+      mountPath: /app/data
+      sizeGB: 1

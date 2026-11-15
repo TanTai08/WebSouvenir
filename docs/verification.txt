@@ -1,0 +1,7 @@
+GiftShop0.4.0 — kết quả đã xác minh
+Source commit: cdd60e3
+CI: https://github.com/TanTai08/WebSouvenir/actions/runs/43707514900
+verify: SUCCESS (syntax, ESLint, Prettier,7 Node tests)
+browser: SUCCESS (7/7 Chromium)
+container: SUCCESS (build + seed + replace container + persisted volume check)
+Không phải UAT/peer approval.

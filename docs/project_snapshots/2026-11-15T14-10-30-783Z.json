@@ -1,0 +1,287 @@
+{
+  "captured_at": "2026-11-15T14:10:30.783Z",
+  "project": "https://github.com/users/TanTai08/projects/1",
+  "note": "Snapshot thực tại thời điểm ghi. Null là chưa có dữ liệu; không thay bằng số0 hoặc ghi lùi ngày.",
+  "rows": [
+    {
+      "issue": 2,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/2",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 3,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/3",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 4,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/4",
+      "status": "In Review",
+      "assignees": [
+        "Txtien-225"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 5,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/5",
+      "status": "Ready",
+      "assignees": [
+        "Txtien-225"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 6,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/6",
+      "status": "In Progress",
+      "assignees": [
+        "LQT23072005"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 7,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/7",
+      "status": "In Progress",
+      "assignees": [
+        "LQT23072005"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 8,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/8",
+      "status": "In Progress",
+      "assignees": [
+        "ngonhat21"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 9,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/9",
+      "status": "In Progress",
+      "assignees": [
+        "LQT23072005"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 10,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/10",
+      "status": "In Progress",
+      "assignees": [
+        "Hoangtrong-S1"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 11,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/11",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-08",
+        "title": "Sprint 1"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 12,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/12",
+      "status": "In Progress",
+      "assignees": [
+        "LQT23072005"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 8
+    },
+    {
+      "issue": 13,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/13",
+      "status": "In Progress",
+      "assignees": [
+        "ngonhat21"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 14,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/14",
+      "status": "In Progress",
+      "assignees": [
+        "LQT23072005"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 15,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/15",
+      "status": "In Progress",
+      "assignees": [
+        "ngonhat21"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 16,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/16",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 17,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/17",
+      "status": "In Review",
+      "assignees": [
+        "Hoangtrong-S1"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-11-22",
+        "title": "Sprint 2"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 18,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/18",
+      "status": "Ready",
+      "assignees": [
+        "Txtien-225"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-12-06",
+        "title": "Sprint 3"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 19,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/19",
+      "status": "Backlog",
+      "assignees": [
+        "Hoangtrong-S1"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-12-06",
+        "title": "Sprint 3"
+      },
+      "story_points": 3
+    },
+    {
+      "issue": 20,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/20",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-12-06",
+        "title": "Sprint 3"
+      },
+      "story_points": 5
+    },
+    {
+      "issue": 21,
+      "url": "https://github.com/TanTai08/WebSouvenir/issues/21",
+      "status": "Backlog",
+      "assignees": [
+        "TanTai08"
+      ],
+      "sprint": {
+        "duration": 14,
+        "startDate": "2026-12-06",
+        "title": "Sprint 3"
+      },
+      "story_points": 3
+    }
+  ]
+}

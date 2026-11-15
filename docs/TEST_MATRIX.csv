@@ -1,0 +1,45 @@
+﻿ID,Case,Expected,Result
+TC01,Chưa login đọc sản phẩm,401,PASS API
+TC02,Sai mật khẩu,401,PASS API
+TC03,Staff sửa sản phẩm,403,PASS API
+TC04,Trùng SKU,409,PASS API
+TC05,Số lượng nhập âm,400,PASS API
+TC06,Bán vượt tồn,"400, tồn giữ nguyên",PASS API
+TC07,Trùng product_id trong giỏ,400,PASS API
+TC08,Hai yêu cầu cùng bán 4 khi còn5,"Một thành công, một400",PASS API
+TC09,Staff xem thống kê,403,PASS API
+TC10,Staff hủy đơn,403,PASS API
+TC11,Hủy đơn đã bán,"Hoàn kho, loại doanh thu",PASS API
+TC12,Hủy lần hai,"400, không hoàn lại lần2",PASS API
+TC13,Origin khác gọi ghi,403,PASS API
+TC14,Đầu vào sai kiểu,400,PASS API
+TC15,Retry cùng Idempotency-Key,"Cùng order_id, trừ một lần",PASS API
+TC16,Cùng key đổi giỏ,409,PASS API
+TC17,Xem chi tiết đơn,Tên/giá/qty đã lưu,PASS API
+TC18,Staff xem users,403,PASS API
+TC19,Đổi mật khẩu sai mật khẩu cũ,403,PASS API
+TC20,Đổi mật khẩu hợp lệ,"Phiên cũ vô hiệu, password mới dùng được",PASS API
+TC21,Online backup,"integrity_check ok, stock và requests đúng",PASS API
+TC22,Backup đè file có sẵn,Bị chặn,PASS API
+TC23,JSON null,400,PASS API
+TC24,Hủy hàng đã archive khi hết tồn,Hoàn kho và thấy lại trong sản phẩm,PASS API
+TC25,Logout,Token cũ trả401,PASS API
+UI01,"Desktop/mobile, bàn phím, lỗi mạng",Kiểm tra luồng và layout,PASS CI Chromium phần mobile/luồng chính; keyboard và mất mạng chưa kiểm toàn diện
+UAT01,Người nghiệm thu dùng luồng chính,Biên bản/email thật,CHƯA CHẠY
+DEP01,HTTPS/restart/restore production,Dữ liệu tồn tại và phục hồi được,CHƯA CHẠY
+REG01,"Giá giỏ cũ25000, giá DB99000","409 PRICE_CHANGED, không tạo đơn; xác nhận mới mới bán",PASS API + browser CI
+REG02,Dòng2 thay giá trong đơn nhiều dòng,Không thay tồn hoặc tạo đơn cho bất kỳ dòng,PASS API
+REG03,Đổi mật khẩu admin rồi restart demo,Khởi động được; mật khẩu mới và dữ liệu còn,PASS demo regression
+REG04,"Một account bị khóa, account khác cùng IP",Account khác login200; account bị khóa429,PASS API
+REG05,Đổi password đồng thời,Chỉ1 yêu cầu thành công; password thua không dùng được,PASS API
+REG06,Phiên mất hiệu lực trong cùng trang,Giỏ bị xóa trước lần đăng nhập sau,PASS browser CI
+REG07,Port đã bị tiến trình khác giữ,Demo không báo ready và exit code1,PASS startup test
+BUILD01,"Build Docker, xóa container và tạo lại cùng volume",Sản phẩm/tồn/đơn còn nguyên,PASS container CI
+AC01,Sổ kho đa sản phẩm sau bán/hủy,stock bằng tổng movements; tổng đơn bằng tổng chi tiết,PASS Node CI
+AC02,Doanh thu ranh giới UTC+7,16:59:59Z ngày trước;17:00:00Z ngày sau; hủy loại số liệu,PASS Node CI
+AC03,Dữ liệu user và giới hạn request,Không trả salt/hash; body quá lớn413 không ghi sản phẩm,PASS Node CI
+AC04,HTML trong tên/danh mục,"Hiển thị text, không tạo img/script hoặc chạy handler",PASS browser CI
+PROXY01,Reverse proxy đổi Host nhưng APP_ORIGIN đúng,Login200 và cookieSecure; Origin khác403 kể cả giảforwardedheaders,PASS Node local
+PROXY02,Local không cấu hình APP_ORIGIN,Origin local200; Origin khác403,PASS Node local
+PROXY03,APP_ORIGIN chứa path hoặccredentials hoặcHTTP khisecure,Chặn cấu hình sai,PASS Node local
+GATE01,Điều kiện merge với review/checkfixtures,Từ chối self/stale/changesrequested/CI thiếu hoặc lỗi; chỉ nhận review đúngHEAD,PASS Node local (6 test); không tạo review thật

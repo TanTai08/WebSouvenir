@@ -1,0 +1,8 @@
+data/
+node_modules/
+.env
+*.log
+
+playwright-report/
+test-results/
+__pycache__/

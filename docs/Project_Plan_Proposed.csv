@@ -1,0 +1,21 @@
+﻿Issue,Role,Sprint,Story Points (PROPOSED),Status
+2,PM,Sprint 1,3,Backlog
+3,PM,Sprint 1,3,Backlog
+4,Tech Lead,Sprint 1,5,Ready
+5,Tech Lead,Sprint 1,3,Ready
+6,Backend,Sprint 1,5,In Review
+7,Backend,Sprint 1,3,In Review
+8,Frontend,Sprint 1,5,In Review
+9,Backend,Sprint 1,5,In Review
+10,QA,Sprint 1,3,Backlog
+11,PM,Sprint 1,3,Backlog
+12,Backend,Sprint 2,8,In Review
+13,Frontend,Sprint 2,5,In Review
+14,Backend,Sprint 2,5,In Review
+15,Frontend,Sprint 2,5,In Review
+16,PM,Sprint 2,3,Backlog
+17,QA,Sprint 2,5,Backlog
+18,Tech Lead,Sprint 3,5,Ready
+19,QA,Sprint 3,3,Backlog
+20,PM,Sprint 3,5,Backlog
+21,PM,Sprint 3,3,Backlog

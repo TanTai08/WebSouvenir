@@ -1,0 +1,47 @@
+{
+  "repository": "TanTai08/WebSouvenir",
+  "contribution_status": "Chưa xác nhận tỷ lệ thực tế; cần cả nhóm thống nhất trước nộp",
+  "members": [
+    {
+      "slot": 1,
+      "role": "PM",
+      "github": "TanTai08",
+      "name": "",
+      "student_id": "",
+      "contribution_percent": null
+    },
+    {
+      "slot": 2,
+      "role": "Tech Lead",
+      "github": "Txtien-225",
+      "name": "",
+      "student_id": "",
+      "contribution_percent": null
+    },
+    {
+      "slot": 3,
+      "role": "Backend",
+      "github": "LQT23072005",
+      "name": "",
+      "student_id": "",
+      "contribution_percent": null
+    },
+    {
+      "slot": 4,
+      "role": "Frontend",
+      "github": "ngonhat21",
+      "name": "",
+      "student_id": "",
+      "contribution_percent": null
+    },
+    {
+      "slot": 5,
+      "role": "QA",
+      "github": "Hoangtrong-S1",
+      "name": "",
+      "student_id": "",
+      "contribution_percent": null
+    }
+  ],
+  "project_url": "https://github.com/users/TanTai08/projects/1"
+}

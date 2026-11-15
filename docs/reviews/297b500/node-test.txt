@@ -1,0 +1,27 @@
+
+> giftshop-vku@0.4.0 test
+> node --test tests/*.test.js
+
+✔ Stock ledger and dashboard reconcile after a multi-product sale and cancellation (477.931887ms)
+✔ Daily revenue uses the UTC+7 midnight boundary and excludes cancelled orders (289.733526ms)
+✔ User APIs do not expose hashes and oversized requests cannot mutate products (239.826723ms)
+✔ Authentication, authorization, inventory transactions and cancellation (1052.257017ms)
+✔ Demo seeds once and preserves records and a changed admin password across restart (1421.563275ms)
+✔ Demo reports failure if another process already occupies its port (264.879094ms)
+✔ A changed quote rejects the entire sale, then explicit reconfirmation succeeds once (367.499945ms)
+✔ A stale price on the second line leaves every stock and order unchanged (268.582365ms)
+✔ Locking one account does not lock another account behind the same IP (1295.335073ms)
+✔ Concurrent password changes cannot overwrite each other after verifying an old password (584.855093ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6669.413158
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

@@ -1,0 +1,65 @@
+name: GiftShop CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-qa
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+
+  container:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      ADMIN_PASSWORD: CI-Container-2026!
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: docker build -t giftshop-ci .
+      - run: |
+          docker volume create giftshop-ci-data
+          docker run -d --name giftshop-ci -p 127.0.0.1:3200:3000 --mount source=giftshop-ci-data,target=/app/data -e ADMIN_PASSWORD giftshop-ci
+          node scripts/container-smoke.mjs --seed
+          docker rm -f giftshop-ci
+          docker run -d --name giftshop-ci -p 127.0.0.1:3200:3000 --mount source=giftshop-ci-data,target=/app/data -e ADMIN_PASSWORD giftshop-ci
+          node scripts/container-smoke.mjs
+      - if: failure()
+        run: docker logs giftshop-ci
+      - if: always()
+        run: |
+          docker rm -f giftshop-ci || true
+          docker volume rm giftshop-ci-data || true
