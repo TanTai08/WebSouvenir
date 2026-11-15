@@ -1,22 +1,23 @@
-# Tự đánh giá hiện trạng0.4 — DỰ THẢO
+# Tự đánh giá hiện trạng — dự thảo ngày 15/11/2026
+
+Nguồn: docs/pm/EVIDENCE_SNAPSHOT.json; không tự chấm điểm số khi chưa có giảng viên đánh giá.
 
 ## Cổng chân thực
 
-Chưa xác nhận đạt: thiếu HTTPS production, nghiệm thu và lịch sử thực hiện học kỳ.
+Chưa đủ cơ sở xác nhận đạt: thiếu acceptance thật, URL HTTPS/persistence/restore đã kiểm và lịch sử thực thi cả học kỳ. Source/test/CI có; metadata commit sau đổi tên/merge và ngày ghi lùi không chứng minh tiến độ quá khứ.
 
-## Kế hoạch30%
+## Kế hoạch —30%
 
-Có Charter/WBS/Risk và bảng kế hoạch20 Issue,85 điểm đề xuất. Cần phê duyệt, thông tin thật và lịch nguồn lực; chưa tự chấm điểm.
+Có Charter, WBS/Dictionary 20 gói, risk workbook,20 Issue và85 điểm đề xuất. Thời lượng gói 7–14 ngày lịch là kế hoạch. Cần stakeholder, phê duyệt baseline, capacity và xác nhận ước lượng.
 
-## Phương pháp20%
+## Phương pháp —20%
 
-Đã chọn Scrum và có Iteration; chưa có bằng chứng Planning/Review/Retro thực của nhóm. Chưa tự chấm điểm.
+PM đã chọn Agile/Scrum, có lịch Sprint và agenda/plan chuẩn bị. Chưa có biên bản Planning/Review/Retro thật. Kế hoạch không được tính như kết quả thực hiện.
 
-## Thực thi30%
+## Thực thi —30%
 
-Có source, CI7 Node/7 browser/Docker, Project và phân công4 người; thiếu peer approval, chỉ số Sprint, CR và risk updates thật. Chưa tự chấm điểm.
+Đủ5 assignee theo vai trò. CI19 Node/8 Chromium/Docker SUCCESS trên source được quan sát. Đã gửi yêu cầu4 reviewer, snapshot chưa có approval. Có CR-001 thực tế được phân tích, còn chờ quyết định. Risk Week 06/Week 11, chỉ số và UAT cần cập nhật có nguồn.
 
-## Bảo vệ20%
+## Bảo vệ —20%
 
-Có slide10 trang và kịch bản demo; chưa diễn tập/UAT. Chưa tự chấm điểm.
-
+Có slide 10 trang, speaker notes, runbook 6+5+5 phút và checklist dự phòng. Chưa có ghi nhận diễn tập, thời lượng thật hoặc acceptance để trình bày kết luận hoàn tất.

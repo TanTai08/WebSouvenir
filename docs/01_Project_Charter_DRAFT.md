@@ -4,7 +4,7 @@
 
 ## 1. Thông tin chung
 
-Tên đề xuất: GiftShop — Website quản lý cửa hàng đồ lưu niệm. Mã đề xuất: VKU-GIFT (nhóm xác nhận). Repo đích: https://github.com/TanTai08/WebSouvenir. PM: @TanTai08. Tên nhóm, lớp, họ tên/MSSV, lịch nộp: CHƯA CUNG CẤP. Project: https://github.com/users/TanTai08/projects/1. Phiên bản tài liệu 0.2 — Draft.
+Tên đề xuất: GiftShop — Website quản lý cửa hàng đồ lưu niệm. Mã đề xuất: VKU-GIFT (nhóm xác nhận). Repo đích: https://github.com/TanTai08/WebSouvenir. PM: @TanTai08. Tên nhóm, lớp, họ tên/MSSV, lịch nộp: CHƯA CUNG CẤP. Project: https://github.com/users/TanTai08/projects/1. Phiên bản tài liệu 0.3 — Draft, cập nhật15/11/2026.
 
 ## 2. Nguồn gốc đề tài
 
@@ -66,3 +66,9 @@ PO/người nghiệm thu: __________________ Họ tên / vai trò / ngày / ch�
 Giảng viên: __________________ Ngày / chữ ký.
 Không có chữ ký hoặc phê duyệt nào được tạo thay trong bản dự thảo.
 
+
+##14. Phụ lục PM và kiểm soát baseline
+
+[Scope/10 tiêu chí chấp nhận](pm/SCOPE_ACCEPTANCE_DRAFT.md), [phiếu stakeholder](pm/STAKEHOLDER_INTERVIEW_DRAFT.md), [WBS Dictionary20 gói](pm/WBS_DICTIONARY.csv) và [evidence index](pm/EVIDENCE_INDEX.md) bổ sung thông tin đã chuẩn bị. Dữ liệu source/Board/CI có timestamp trong pm/EVIDENCE_SNAPSHOT.json.
+
+PM đã yêu cầu ưu tiên hosting miễn phí; CR-001 đề xuất Codespaces demo, chưa thay điều kiện production/persistentDB khi chưa có quyết định của stakeholder. Mã nguồn dùng Node24/SQLite và UI JavaScript; chưa có đánh giá tải/SLA được phê duyệt. Chỉ tiêu đề xuất cần được xác nhận với người dùng thật trước chốt.

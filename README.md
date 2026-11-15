@@ -121,3 +121,7 @@ Chạy `npm.cmd run qa:verify` để kiểm tra syntax/lint/format/test và lưu
 [GitHub Codespaces](docs/FREE_HTTPS_DEMO.md) là phương án demo HTTPS trong hạn mức miễn phí: cấu hình Node24 đã có, chạy `npm run codespace`, dùng mật khẩu riêng từ Codespaces secret. Cần chủ tài khoản tạo Codespace và kiểm link thật; website dừng khi Codespace dừng. SQLite được giữ trong workspace, cần tải backup trước khi xóa. Chưa có URL triển khai được xác nhận.
 
 Khi dùng reverse proxy đổi Host, đặt APP_ORIGIN là origin HTTPS thực tế (không có dấu / cuối); ứng dụng chỉ chấp nhận Origin đã cấu hình và không tin header forwarding do client gửi.
+
+## Công việc PM và evidence
+
+[Bàn giao PM TanTai08](docs/roles/PM.md) đã liên kết đầu ra và điều kiện còn thiếu của6 nhiệm vụ. [Bộ PM](docs/pm/README.md) có scope/AC, phiếu khảo sát, Review/Retro chuẩn bị, Sprint2 đề xuất, WBS Dictionary20 gói, risk/decision log và runbook bảo vệ. PDF/DOCX07 nằm trong reports; slide10 trang đã được cập nhật cùng speaker notes. Chỉ số snapshot có thời điểm thực tế; biểu mẫu chưa thay chữ ký hoặc hoạt động chưa diễn ra.

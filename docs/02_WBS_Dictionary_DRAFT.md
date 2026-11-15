@@ -40,3 +40,7 @@ Mỗi mã lá nêu đầu ra, owner dự kiến, thời lượng, phụ thuộc,
 
 Mạng ban đầu: A khảo sát (1 tuần) → B kiến trúc (1) → C sản phẩm/nhập kho (2) → D bán hàng/hủy (2) → E UAT/triển khai (1) → F bàn giao (1). Chuỗi A-B-C-D-E-F có tổng 8 tuần nếu nguồn lực, lịch và phụ thuộc giữ nguyên. Nhánh CI và giao diện làm song song, cần phân tích ES/EF/LS/LF và tải nguồn lực trước khi gọi đây là đường găng được duyệt. Không coi chuỗi minh họa này là số liệu thực tế.
 
+
+## Dictionary chi tiết20 gói
+
+[WBS_DICTIONARY.csv](pm/WBS_DICTIONARY.csv) ánh xạ duy nhất20 gói tới20 Issue; mỗi gói có owner, Sprint dự kiến,7 hoặc14 ngày lịch đề xuất, điểm, phụ thuộc và AC. [Bảng coverage](pm/WBS_COVERAGE.md) giải thích100% Rule và tránh đếm trùng. Chưa phê duyệt baseline hoặc cam kết nguồn lực.

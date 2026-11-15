@@ -13,3 +13,9 @@ Có thêm 06_UAT_Delivery_Pack_DRAFT.pdf/.docx,15 case UAT, user guide, kiểm t
 Còn cần review độc lập, tạo Codespace/kiểm URL, UAT, chữ ký và evidence học kỳ; chưa release1.0.0.
 
 Gói rà soát kỹ thuật: Technical_QA_Verification.pdf. Khi có GitHub CLI đã login, chạy npm.cmd run qa:progress -- --apply để ghi tiến độ #4/#10/#17; không đóng Issue.
+
+BỘ PM CẬP NHẬT: docs/roles/PM.md và docs/pm/README.md.
+Có reports/07_PM_Management_Pack_DRAFT.pdf/.docx: scope/AC, phiếu phỏng vấn, Review/Retro chuẩn bị, Sprint2 đề xuất, risk/change/decision log, evidence index và runbook6+5+5.
+Charter, WBS Dictionary20 gói, report15 trang, rubric và slide10 trang/notes đã xuất lại từ nguồn cập nhật.
+Burndown_Observed_Current.pdf chỉ vẽ ngày đo thật: Sprint1 hiện1 ngày; Sprint2 chưa có quan sát trong Sprint.
+Bản GitHub có thể mới hơn gói ZIP Drive cũ; dùng git pull --ff-only để cập nhật từ nhánh đang theo dõi.

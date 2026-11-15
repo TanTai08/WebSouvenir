@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-11-15T15:26:44.439056+00:00",
+  "prepared_by": "Codex hỗ trợ PM TanTai08; không thay peer review hoặc chữ ký",
+  "source_commit": "1b749bbd7d4315cb3f8d7b6bcbf36112b5ead187",
+  "project_snapshot": "docs/project_snapshots/2026-11-15T15-22-10-679Z.json",
+  "project_observed_at": "2026-11-15T15:22:10.679Z",
+  "counts": {
+    "In Progress": 13,
+    "Backlog": 3,
+    "In Review": 2,
+    "Ready": 2
+  },
+  "pull_request": {
+    "url": "https://github.com/TanTai08/WebSouvenir/pull/1",
+    "state": "OPEN",
+    "author": "TanTai08",
+    "reviews": [],
+    "requested_reviewers": [
+      "Hoangtrong-S1",
+      "LQT23072005",
+      "ngonhat21",
+      "Txtien-225"
+    ],
+    "checks": [
+      {
+        "name": "verify",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43724685797/job/132843974475"
+      },
+      {
+        "name": "verify",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43728024281/job/132854119090"
+      },
+      {
+        "name": "browser",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43724685797/job/132843974727"
+      },
+      {
+        "name": "browser",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43728024281/job/132854119332"
+      },
+      {
+        "name": "container",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43724685797/job/132843974728"
+      },
+      {
+        "name": "container",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/TanTai08/WebSouvenir/actions/runs/43728024281/job/132854119313"
+      }
+    ]
+  },
+  "proposal_points": 85,
+  "points_approved": false,
+  "uat_confirmed": false,
+  "production_url": null
+}

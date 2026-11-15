@@ -41,3 +41,7 @@ Môn chuyên ngành kế thừa: __________  Hạn nộp: __________  Stakeholde
 | QA | Hoangtrong-S1 | | | |
 
 Tổng đóng góp cần bằng 100%, được cả nhóm xác nhận từ công việc đã làm. Không tự phân đều chỉ để điền đủ biểu mẫu.
+
+## Bộ PM bổ sung
+
+Xem docs/pm/README.md và reports/07_PM_Management_Pack_DRAFT.pdf/.docx: snapshot thực tế, phiếu khảo sát, scope/AC, Review/Retro chuẩn bị, Sprint2 đề xuất, risk/decision log, WBS Dictionary20 gói và runbook bảo vệ. docs/pm/BURNDOWN_OBSERVED.csv chỉ chứa ngày đã đo; điểm vẫn đề xuất. Sprint2 chưa bắt đầu nên scope snapshot chưa phải lịch sử thực thi Sprint2.
