@@ -3,9 +3,18 @@ Website quản lý cửa hàng đồ lưu niệm cho đồ án QLDA VKU.
 Repo đích: https://github.com/TanTai08/WebSouvenir — PM: @TanTai08.
 
 ## Trạng thái
-Bản phát triển 0.2.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
+Bản phát triển 0.3.0. Có backend thật, SQLite lưu bền trên ổ đĩa, đăng nhập và phân quyền server. Chưa triển khai cloud, chưa có stakeholder/UAT, CI GitHub đã chạy thành công trên PR #1, chưa tạo release v1.0.0. Đây không phải hồ sơ cuối kỳ đã hoàn tất.
 
-## Chạy tại máy
+## Chạy ngay bản demo
+Cài Node.js 24 rồi chạy:
+```sh
+npm run demo
+```
+Mở http://127.0.0.1:3000 — tài khoản `admin`, mật khẩu **DEMO** `GiftShop-Demo-2026!`. Lệnh tự tạo database demo riêng và chuẩn bị 3 sản phẩm có nhãn DEMO. Không cần GitHub của các thành viên và không cần npm install để chạy app. Đây là chế độ local loopback, không dùng mật khẩu demo trên production.
+
+Windows có thể bấm `start-demo.bat`, macOS/Linux chạy `sh start-demo.sh`.
+
+## Chạy tại máy với dữ liệu riêng
 Yêu cầu Node.js 24 trở lên. Không cần npm install vì dùng thư viện có sẵn của Node.
 
 Linux/macOS:
@@ -58,3 +67,6 @@ Bốn tài khoản còn lại, họ tên/MSSV của 5 người; môn chuyên ng�
 - config/team.json đã có 5 vị trí. scripts/assign_member.py nhận GitHub và gán Issue theo vai trò khi có quyền.
 - scripts/backup.mjs backup SQLite online; scripts/demo.mjs chuẩn bị dữ liệu có nhãn DEMO.
 - Xem docs/HANDOVER.md để bàn giao theo 5 vai trò.
+
+## Kiểm thử trình duyệt
+Có bộ Playwright E2E trên GitHub Actions, gồm đăng nhập sai, luồng admin đầy đủ, staff, viewport mobile và đổi mật khẩu. Trên máy hỗ trợ browser: `npm ci`, `npx playwright install chromium`, `npm run test:browser`. Kết quả và ảnh chụp nằm trong artifact browser-qa của run. Đây là QA tự động, không phải UAT hoặc peer review của sinh viên.
