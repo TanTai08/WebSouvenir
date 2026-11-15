@@ -1,6 +1,6 @@
 # Bàn giao vị trí Frontend
 
-GitHub: ________________ (bổ sung sau)
+GitHub: @ngonhat21
 
 ## GS07 — Giao diện sản phẩm và tìm kiếm
 
@@ -27,3 +27,5 @@ Trạng thái: Dashboard có; chờ kiểm UI/nghiệp vụ
 Bằng chứng sau review: __________________
 
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
+
+Tài khoản được PM phân công Frontend. Lời mời collaborator cần chủ repo thực hiện trên Settings do integration hiện trả403 khi gửi lời mời. Việc phân công không thay lịch sử đóng góp.
