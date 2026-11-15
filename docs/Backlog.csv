@@ -1,0 +1,21 @@
+﻿ID,WBS,Task,Role,Sprint,Points,Acceptance
+GS01,1.1,"Xác nhận đề tài, môn kế thừa và người nghiệm thu",PM,Chuẩn bị,3,Charter có thông tin thật; stakeholder đồng ý tham gia
+GS02,1.1,Phỏng vấn và chốt phạm vi,PM,Chuẩn bị,3,"Có biên bản, in/out scope, tiêu chí nghiệm thu được xác nhận"
+GS03,2.1,Review kiến trúc và DB,Tech Lead,Sprint 1,5,"ERD, chính sách tồn kho và tiền VND được cả nhóm hiểu"
+GS04,2.2,"Thiết lập repo, CI và bảo vệ main",Tech Lead,Sprint 1,3,PR thật chạy CI xanh; không merge khi thiếu review
+GS05,3.1,Đăng nhập và phân quyền,Backend,Sprint 1,5,Sai mật khẩu trả 401; nhân viên không sửa sản phẩm
+GS06,3.2,API quản lý sản phẩm,Backend,Sprint 1,3,Mã trùng bị chặn; giá âm bị chặn; sửa/lưu trữ hợp lệ
+GS07,3.2,Giao diện sản phẩm và tìm kiếm,Frontend,Sprint 1,5,Thêm/sửa/tìm được; dữ liệu HTML được escape
+GS08,3.3,Nhập hàng và lịch sử kho,Backend,Sprint 1,5,Nhập tăng đúng số lượng; lưu người thao tác và lý do
+GS09,4.1,Test Sprint 1 và risk update 1,QA,Sprint 1,3,"Lưu kết quả thật, lỗi, PR khắc phục và rủi ro phát sinh"
+GS10,1.2,"Review, Retro Sprint 1 và lập Sprint 2",PM,Sprint 1,3,"Có người tham dự, hành động cải tiến và owner"
+GS11,3.4,Tạo đơn và trừ tồn nguyên tử,Backend,Sprint 2,8,Hai yêu cầu vượt tổng tồn chỉ một được bán; không âm kho
+GS12,3.4,Giao diện giỏ hàng và thanh toán quầy,Frontend,Sprint 2,5,Thêm/bỏ hàng; hiển thị lỗi tồn; chặn nhấn lặp khi chờ
+GS13,3.4,Hủy đơn và hoàn kho,Backend,Sprint 2,5,Chỉ admin; hủy lần hai bị chặn; doanh thu loại đơn hủy
+GS14,3.5,Dashboard và doanh thu theo ngày,Frontend,Sprint 2,5,Số liệu đối chiếu đơn thật; ngày theo UTC+7
+GS15,1.2,Risk update 2 và xử lý CR thực tế,PM,Sprint 2,3,"Có diễn biến, đánh giá ảnh hưởng, phê duyệt và liên kết CR thật"
+GS16,4.1,Kiểm thử tích hợp và giao diện,QA,Sprint 2,5,"Có ma trận pass/fail, test responsive và regression"
+GS17,4.3,"Deploy HTTPS, volume và backup",Tech Lead,Hoàn thiện,5,URL chạy thật; dữ liệu còn sau restart; thử restore
+GS18,4.2,UAT và Final Retro,QA,Hoàn thiện,3,Người nghiệm thu xác nhận thật; hành động còn mở ghi rõ
+GS19,5.1,Hoàn thiện báo cáo và evidence,PM,Hoàn thiện,5,"Đủ 5 nhóm báo cáo, 7 chương, 15–25 trang có nguồn"
+GS20,5.2,"Slide, rubric và diễn tập",PM,Hoàn thiện,3,8–10 slide; diễn tập 6+5+5 phút; có backup
