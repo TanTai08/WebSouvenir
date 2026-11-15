@@ -44,4 +44,4 @@ Bằng chứng sau review: __________________
 
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
 
-PM đã phân công @LQT23072005 làm Backend. Tại lần kiểm tra này, tài khoản chỉ có quyền read công khai; chưa xác nhận collaborator/write. Trường Assignees chờ chủ repo mời và thành viên chấp nhận.
+Đã xác minh @LQT23072005 có quyền write trên repo. Đã gán các Issue Backend #6, #7, #9, #12, #14; Assignees hiển thị trên Project từ các Issue được liên kết.
