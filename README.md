@@ -5,7 +5,7 @@ Website quản lý nội bộ cửa hàng đồ lưu niệm cho đồ án QLDA V
 - Repo: https://github.com/TanTai08/WebSouvenir
 - Bản triển khai: nhánh `feat/giftshop-initial`, PR #1; chờ thành viên review trước merge main.
 - Project: https://github.com/users/TanTai08/projects/1
-- PM: @TanTai08; Tech Lead: @Txtien-225; Backend: @LQT23072005; Frontend: @ngonhat21. QA bổ sung sau.
+- PM: @TanTai08; Tech Lead: @Txtien-225; Backend: @LQT23072005; Frontend: @ngonhat21. QA: @Hoangtrong-S1.
 
 ## Chạy ngay trên Windows / VS Code
 
@@ -101,10 +101,10 @@ npm.cmd run project:apply
 npm.cmd run project:snapshot
 ```
 
-Xem docs/PROJECT_PLAN.md. Kết nối chat chỉ đọc Projects, chưa sửa được trực tiếp. scripts/assign_member.py giúp bổ sung QA và gán Issue sau. Role/GitHub không tự tạo lịch sử đóng góp.
+Xem docs/PROJECT_PLAN.md. Kết nối chat chỉ đọc Projects, chưa sửa được trực tiếp. scripts/assign_member.py giúp điều chỉnh phân công khi nhóm thay đổi thành viên. Role/GitHub không tự tạo lịch sử đóng góp.
 
 ## Việc còn lại để nộp môn
 
-Peer review/merge PR; xác nhận các required checks trên main; QA và họ tên/MSSV/tỷ lệ đóng góp; môn kế thừa, deadline, stakeholder; HTTPS production; Sprint/Retro/Risk/CR thật; UAT/sign-off; báo cáo cuối và release v1.0.0. Hồ sơ15 trang hiện là báo cáo kỹ thuật theo trạng thái đã xác minh, chưa phải xác nhận hoàn thành học kỳ.
+Peer review/merge PR; xác nhận các required checks trên main; Họ tên/MSSV/tỷ lệ đóng góp; môn kế thừa, deadline, stakeholder; HTTPS production; Sprint/Retro/Risk/CR thật; UAT/sign-off; báo cáo cuối và release v1.0.0. Hồ sơ15 trang hiện là báo cáo kỹ thuật theo trạng thái đã xác minh, chưa phải xác nhận hoàn thành học kỳ.
 
 Xuất lại báo cáo (tùy chọn cho người chỉnh tài liệu): cài Python3, `pip install reportlab python-docx`, chạy `python scripts/build_report.py`. PDF dùng font Unicode có sẵn trên Windows/Linux/macOS hoặc đường dẫn REPORT_FONT. Bản DOCX trong reports có thể chỉnh trực tiếp bằng Word.

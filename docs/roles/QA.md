@@ -1,6 +1,6 @@
 # Bàn giao vị trí QA
 
-GitHub: ________________ (bổ sung sau)
+GitHub: @Hoangtrong-S1
 
 ## GS09 — Test Sprint 1 và risk update 1
 
@@ -29,3 +29,5 @@ Bằng chứng sau review: __________________
 Đọc README, HANDOVER, ARCHITECTURE và TEST_MATRIX. Chạy lại và hiểu phần việc; commit/PR của thành viên chỉ ghi nhận đóng góp thật.
 
 Bản0.4: xem docs/ARCHITECTURE.md và docs/QA_RESULTS.md. Đường dẫn server.js nay là entry; nghiệp vụ ở src/routes/, UI ở public/views/.
+
+Đã xác minh @Hoangtrong-S1 có quyền write trên repo và phụ trách QA/Tester. Issue #10, #17, #19 được gán cho tài khoản này; cần chạy kiểm tra/ghi kết quả thực tế trước khi đóng nhiệm vụ.
