@@ -4,14 +4,15 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 
-export async function fixture() {
+export async function fixture({ origin = '', secure = false } = {}) {
   const dir = mkdtempSync(path.join(tmpdir(), 'giftshop-regression-'));
   const child = spawn(process.execPath, ['server.js'], {
     env: {
       ...process.env,
       PORT: '0',
       HOST: '127.0.0.1',
-      COOKIE_SECURE: '0',
+      COOKIE_SECURE: secure ? '1' : '0',
+      APP_ORIGIN: origin,
       DB_PATH: path.join(dir, 'app.db'),
       ADMIN_PASSWORD: 'Regression-Admin-2026!',
     },

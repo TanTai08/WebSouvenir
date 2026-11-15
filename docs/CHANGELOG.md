@@ -17,3 +17,10 @@
 
 ## Chưa tuyên bố hoàn tất
 Peer review, UAT/người dùng thật, release1.0.0, HTTPS production, lịch sử cả học kỳ và bộ hồ sơ có chữ ký.
+
+## Bổ sung bàn giao ngày 15/11/2026
+- Công cụ delivery:check/delivery:merge kiểm review độc lập đúng commit, 3 CI checks và trạng thái PR; không dùng admin bypass.
+- Cấu hình GitHub Codespaces Node24 cho HTTPS demo theo hạn mức tài khoản, chưa tạo deployment thật.
+- APP_ORIGIN cố định cho reverse proxy; giữ kiểm tra CSRF Origin và Secure cookie.
+- 15 case UAT, user guide, sign-off và checklist 5 nhóm hồ sơ; kết quả/chữ ký còn trống.
+- Kiểm thử hiện tại: 13 bài ứng dụng Node + 6 bài merge gate; bộ Chromium CI gồm8 case.

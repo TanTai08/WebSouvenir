@@ -6,9 +6,10 @@ DB mới: admin / GiftShop-Demo-2026! (chỉ demo). DB cũ: giữ password đã 
 Cập nhật: dừng app, backup data, cập nhật source, giữ data/, chạy và Ctrl+F5 trong trình duyệt. Không cần xóa database.
 Đã sửa stale price, restart sau đổi password, khóa nhiều account cùng IP, reset giỏ khi session mất hiệu lực.
 Code đã tách module backend/frontend.
-CI: syntax/lint/format,10 Node tests,8 browser tests, Docker build + thay container giữ volume đều pass.
+Bản mới: local syntax/lint/format và19 Node tests đã qua (13 app,6 merge gate); Chromium8 và Docker volume kiểm trên CI của từng commit.
 QA Hoangtrong-S1; PM TanTai08, TL Txtien-225, Backend LQT23072005, Frontend ngonhat21.
 Báo cáo mới: 04_Technical_Report_CURRENT.pdf.
-Còn cần review của thành viên, UAT, HTTPS production, chữ ký và evidence học kỳ; chưa release1.0.0.
+Có thêm 06_UAT_Delivery_Pack_DRAFT.pdf/.docx,15 case UAT, user guide, kiểm tra merge và hướng dẫn Codespaces HTTPS demo theo hạn mức miễn phí.
+Còn cần review độc lập, tạo Codespace/kiểm URL, UAT, chữ ký và evidence học kỳ; chưa release1.0.0.
 
 Gói rà soát kỹ thuật: Technical_QA_Verification.pdf. Khi có GitHub CLI đã login, chạy npm.cmd run qa:progress -- --apply để ghi tiến độ #4/#10/#17; không đóng Issue.

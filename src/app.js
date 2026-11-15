@@ -31,7 +31,7 @@ const files = new Map([
     'views/team',
   ].map((file) => [`/${file}.js`, `${file}.js`]),
 ]);
-export function createApp({ db, root, secure }) {
+export function createApp({ db, root, secure, origin }) {
   const limiter = new LoginLimiter();
   return async function app(request, response) {
     try {
@@ -71,7 +71,8 @@ export function createApp({ db, root, secure }) {
       if (
         !['GET', 'HEAD'].includes(request.method) &&
         request.headers.origin &&
-        request.headers.origin !== `${secure ? 'https' : 'http'}://${request.headers.host}`
+        request.headers.origin !==
+          (origin || `${secure ? 'https' : 'http'}://${request.headers.host}`)
       )
         fail('Nguồn yêu cầu không hợp lệ', 403);
       const ctx = { db, root, request, response, url, pathname, limiter, secure };
